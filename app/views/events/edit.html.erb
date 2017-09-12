@@ -1,4 +1,4 @@
-<h1>Events#new</h1>
+<h1>Events#edit</h1>
 
 <%= form_for @event do |f| %>
   <%= f.label :name %><br />
@@ -9,5 +9,9 @@
   <%= f.text_field :location %><br />
   <%= f.label :date_time %><br />
   <%= f.datetime_select :date_time, {prompt: true, ampm: true}%><br />
-  <%= f.submit 'Create' %>
+  <%= f.submit 'Update Event' %>
+<% end %>
+
+<%= form_for @event, method: :delete do |f| %>
+  <%= f.submit 'Delete' %>
 <% end %>
