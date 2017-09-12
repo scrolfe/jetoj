@@ -1,9 +1,13 @@
-<h1>Media#new</h1>
+<h1>Media#edit</h1>
 
 <%= form_for @medium do |f| %>
   <%= f.label :youtube_id %><br />
   <%= f.text_field :youtube_id %><br />
   <%= f.label :description %><br />
   <%= f.text_area :description %><br />
-  <%= f.submit 'Create' %>
+  <%= f.submit 'Update' %>
+<% end %>
+
+<%= form_for @medium, method: :delete do |f| %>
+  <%= f.submit 'Delete' %>
 <% end %>
