@@ -2,11 +2,13 @@
 </aside>
 <div class="col-md-10">
   <% @posts.each do |post| %>
-    <!-- <p><%= image_tag post.image.url %></p> -->
-    <p><%= image_tag post.image.url(:medium), class: "post-thumbnail" %></p>
-    <!-- <p><%= image_tag post.image.url(:thumb) %></p> -->
-    <h2><%= post.title %></h2>
-    <p><%= post.body %></p>
+    <div class="post">
+      <!-- <p><%= image_tag post.image.url %></p> -->
+      <p><%= image_tag post.image.url(:medium), class: "post-thumbnail" %></p>
+      <!-- <p><%= image_tag post.image.url(:thumb) %></p> -->
+      <h2 class="post-title"><%= post.title %></h2>
+      <p class="post-body"><%= post.body %></p>
+    </div>
   <% end %>
 </div>
 <aside class="col-md-1">
