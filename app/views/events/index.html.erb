@@ -2,6 +2,9 @@
 
 <% @events.each do |event| %>
   <h2><%= event.name %></h2>
+  <p><%= image_tag event.image.url %></p>
+  <p><%= image_tag event.image.url(:medium) %></p>
+  <p><%= image_tag event.image.url(:thumb) %></p>
   <p><%= event.date_time %></p>
   <p><%= event.location %></p>
   <p><%= event.description %></p>
