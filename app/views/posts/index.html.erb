@@ -1,7 +1,13 @@
-<% @posts.each do |post| %>
-  <p><%= image_tag post.image.url %></p>
-  <p><%= image_tag post.image.url(:medium) %></p>
-  <p><%= image_tag post.image.url(:thumb) %></p>
-  <h2><%= post.title %></h2>
-  <p><%= post.body %></p>
-<% end %>
+<aside class="col-md-1">
+</aside>
+<div class="col-md-10">
+  <% @posts.each do |post| %>
+    <!-- <p><%= image_tag post.image.url %></p> -->
+    <p><%= image_tag post.image.url(:medium), class: "post-thumbnail" %></p>
+    <!-- <p><%= image_tag post.image.url(:thumb) %></p> -->
+    <h2><%= post.title %></h2>
+    <p><%= post.body %></p>
+  <% end %>
+</div>
+<aside class="col-md-1">
+</aside>
