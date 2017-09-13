@@ -1,6 +1,18 @@
 <h1>Media#index</h1>
 
 <% @media.each do |medium| %>
-  <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/#{medium.youtube_id}" %>"></iframe>
+
+  <% if !medium.image.blank? %>
+    <p><%= image_tag medium.image.url %></p>
+    <p><%= image_tag medium.image.url(:medium) %></p>
+    <p><%= image_tag medium.image.url(:thumb) %></p>
+  <% end %>
+
+  <% if !medium.youtube_id.empty? %>
+    <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/#{medium.youtube_id}" %>"></iframe>
+  <% end %>
+
   <p><%= medium.description %></p>
+
+
 <% end %>

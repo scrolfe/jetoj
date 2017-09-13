@@ -1,6 +1,14 @@
 <h1>Media#edit</h1>
 
+<% if !@medium.image.blank? %>
+  <p><%= image_tag @medium.image.url %></p>
+  <p><%= image_tag @medium.image.url(:medium) %></p>
+  <p><%= image_tag @medium.image.url(:thumb) %></p>
+<% end %>
+
 <%= form_for @medium do |f| %>
+  <%= f.label :image %><br />
+  <%= f.file_field :image %><br />
   <%= f.label :youtube_id %><br />
   <%= f.text_field :youtube_id %><br />
   <%= f.label :description %><br />
