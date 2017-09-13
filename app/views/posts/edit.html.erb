@@ -1,6 +1,12 @@
 <h1>Posts#edit</h1>
 
+<p><%= image_tag @post.image.url %></p>
+<p><%= image_tag @post.image.url(:medium) %></p>
+<p><%= image_tag @post.image.url(:thumb) %></p>
+
 <%= form_for @post do |f| %>
+  <%= f.label :image %><br />
+  <%= f.file_field :image %><br />
   <%= f.label :title %><br />
   <%= f.text_field :title %><br />
   <%= f.label :body %><br />
