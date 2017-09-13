@@ -1,6 +1,6 @@
 require 'faker'
 
-# Access seed_assets via: "#{Rails.root}/app/assets/seed_assets"
+# Access seed_assets via: "#{Rails.root}/app/assets/images/seed_assets"
 
 # Events
 3.times do
@@ -14,7 +14,7 @@ require 'faker'
     description: "#{Faker::Lorem.paragraph}",
     location: "#{Faker::Address.street_address}, #{city}, #{state} #{zip}",
     date_time: "#{date_time}",
-    image: File.new("#{Rails.root}/app/assets/seed_assets/events_images/event_image.jpg")
+    image: File.new("#{Rails.root}/app/assets/images/seed_assets/events_images/event_image.jpg")
     )
 end
 
@@ -23,7 +23,7 @@ end
   Post.create(
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph,
-    image: File.new("#{Rails.root}/app/assets/seed_assets/posts_images/post_image.jpg")
+    image: File.new("#{Rails.root}/app/assets/images/seed_assets/posts_images/post_image.jpg")
   )
 end
 
@@ -32,7 +32,7 @@ end
   Medium.create(
     youtube_id: "Zp_NxCyagaw",
     description: "#{Faker::Lorem.sentence}",
-    image: File.new("#{Rails.root}/app/assets/seed_assets/media_images/medium_image.jpg")
+    image: File.new("#{Rails.root}/app/assets/images/seed_assets/media_images/medium_image.jpg")
   )
 end
 
@@ -45,5 +45,5 @@ User.create(  email: 'test@user.com',
               last_name: 'user',
               bio: Faker::Lorem.sentence,
               admin: true,
-              avatar: File.new("#{Rails.root}/app/assets/seed_assets/user_avatars/user_avatar.jpg")
+              avatar: File.new("#{Rails.root}/app/assets/images/seed_assets/user_avatars/user_avatar.jpg")
             )
