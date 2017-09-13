@@ -8,17 +8,36 @@ $light-color: rgb(196, 184, 241);
 
 /* type */
 
-.post {
+.container {
+
+}
+
+.post-head {
   width: inherit;
+  display: flex;
   .post-thumbnail {
     width: 240px;
     height: 160px;
   }
   .post-title {
-    display: inline;
+    text-transform: capitalize;
+    font-weight: 800;
+    font-size: 1.5em;
+    width: 25%;
+    float: left;
+    margin: 0 0 0 20px;
+  }
+}
+
+.post-tail {
+  width: inherit;
+  display: flex;
+  .post-credits {
+    font-size: .75em;
   }
   .post-summary {
-
+    font-size: 1em;
+    display: block;
   }
 }
 
@@ -33,11 +52,6 @@ img {
   border-radius: 30px;
   border: 2px solid $primary-color;
 
-  .post-thumbnail{
-    float: left;
-    width: 240px;
-    height: 160px;
-  }
   .post-image{
     width: 800px;
     height: 600px;
@@ -54,6 +68,5 @@ img {
     width: 160px;
     height: 160px;
   }
-
 
 }
