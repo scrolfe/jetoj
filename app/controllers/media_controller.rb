@@ -1,10 +1,11 @@
 class MediaController < ApplicationController
+    before_action :set_medium, only: [:show, :edit, :update, :destroy]
+
   def index
     @media = Medium.all
   end
 
   def show
-    @medium = Medium.find(params[:id])
   end
 
   def new
@@ -21,11 +22,9 @@ class MediaController < ApplicationController
   end
 
   def edit
-    @medium = Medium.find(params[:id])
   end
 
   def update
-    @medium = Medium.find(params[:id])
     if @medium.update(medium_params)
       redirect_to @medium
     else
@@ -34,7 +33,6 @@ class MediaController < ApplicationController
   end
 
   def destroy
-    @medium = Medium.find(params[:id])
     if @medium.destroy
       redirect_to media_path
     end
@@ -44,5 +42,9 @@ class MediaController < ApplicationController
 
   def medium_params
     params.require(:medium).permit(:youtube_id, :description, :image)
+  end
+
+  def set_medium
+    @medium = Medium.find(params[:id])
   end
 end
