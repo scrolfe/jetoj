@@ -7,6 +7,6 @@
     </div>
     <div class="post-tail col-md-10">
       <p class="post-body"><%= post.body %></p>
-      <button class="post-link"><%=link_to "Continue reading...", "posts/#{post.id}"%>
+      <%= link_to "Continue Reading...", "#{post.id}", class: "post-link" %>
     </div>
   <% end %>

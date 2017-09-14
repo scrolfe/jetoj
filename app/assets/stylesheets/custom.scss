@@ -5,8 +5,12 @@
 $primary-color: rgb(111, 61, 191);
 $dark-color: rgb(60, 8, 172);
 $light-color: rgb(196, 184, 241);
+$user-picture: url('../images/seed_assets/user_avatars/user_avatar');
+$post-picture: url('../images/seed_assets/posts_images/post_image');
+$medium-picture: url('../images/seed_assets/media_images/medium_image');
+$event-picture: url('../images/seed_assets/events_images/event_image');
 
-/* type */
+/* typography */
 
 .container {
 
@@ -28,17 +32,21 @@ $light-color: rgb(196, 184, 241);
     margin: 0 0 0 20px;
   }
 }
-
 .post-tail {
   margin: 10px 0 25px 10px;
   width: inherit;
   display: flex;
+  flex-direction: column;
   .post-credits {
     font-size: .75em;
   }
   .post-summary {
     font-size: 1em;
     display: block;
+  }
+  .post-link {
+    font-size: 1em;
+    font-weight: 500;
   }
 }
 
@@ -49,7 +57,6 @@ $light-color: rgb(196, 184, 241);
   width: 100%;
   background-color: $dark-color;
   // background-image: img();
-
   .jetoj-word {
     text-transform: uppercase;
     font-size: 3.5em;
@@ -59,9 +66,6 @@ $light-color: rgb(196, 184, 241);
       color: $light-color;
       text-decoration: none;
     }
-  }
-  .navbar-header {
-
   }
   .navbar-nav {
     margin: 1.5em 1em 0 0;
