@@ -1,13 +1,15 @@
-<header class="navbar navbar-fixed-top nav-inverse site-banner">
-  <div class="container site-banner">
-    <%= link_to "Jetoj", root_path, id: "logo" %>
-    <nav>
+<nav class="navbar navbar-default site-banner">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "Jetoj", root_path, id: "logo", class: "jetoj-word" %>
+    </div>
+    <div class="navbar-nav navbar-right"
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Posts", posts_path %></li>
         <li><%= link_to "Events", events_path %></li>
         <li><%= link_to "Media", media_path %></li>
       </ul>
-    </nav>
+    </div>
   </div>
-</header>
+</nav>

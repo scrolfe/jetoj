@@ -30,6 +30,7 @@ $light-color: rgb(196, 184, 241);
 }
 
 .post-tail {
+  margin: 10px 0 25px 10px;
   width: inherit;
   display: flex;
   .post-credits {
@@ -44,29 +45,36 @@ $light-color: rgb(196, 184, 241);
 /* images */
 
 .site-banner {
+  height: 5em;
   width: 100%;
+  background-color: $dark-color;
   // background-image: img();
-}
 
-img {
-  border-radius: 30px;
-  border: 2px solid $primary-color;
+  .jetoj-word {
+    text-transform: uppercase;
+    font-size: 3.5em;
+    font-weight: 800;
+    color: $primary-color;
+    &:hover {
+      color: $light-color;
+      text-decoration: none;
+    }
+  }
+  .navbar-header {
 
-  .post-image{
-    width: 800px;
-    height: 600px;
   }
-  .event-image {
-    width: 240px;
-    height: 160px;
+  .navbar-nav {
+    margin: 1.5em 1em 0 0;
+    li {
+      a {
+        font-weight: bolder;
+        font-size: 1.5em;
+        color: $primary-color;
+        &:hover {
+          color: $light-color;
+          text-decoration: none;
+        }
+      }
+    }
   }
-  .media-image{
-    width: 240px;
-    height: 160px;
-  }
-  .user-image{
-    width: 160px;
-    height: 160px;
-  }
-
 }
