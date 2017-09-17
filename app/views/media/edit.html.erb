@@ -2,8 +2,6 @@
 
 <% if !@medium.image.blank? %>
   <p><%= image_tag @medium.image.url %></p>
-  <p><%= image_tag @medium.image.url(:medium) %></p>
-  <p><%= image_tag @medium.image.url(:thumb) %></p>
 <% end %>
 
 <%= form_for @medium do |f| %>

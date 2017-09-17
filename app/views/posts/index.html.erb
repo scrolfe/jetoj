@@ -3,9 +3,7 @@
 
   <% @posts.each do |post| %>
     <div class="post-head col-md-10">
-      <!-- <p><%= image_tag post.image.url %></p> -->
       <p><%= image_tag post.image.url(:medium), class: "post-thumbnail" %></p>
-      <!-- <p><%= image_tag post.image.url(:thumb) %></p> -->
       <h2 class="post-title"><%= post.title %></h2>
     </div>
     <div class="post-tail col-md-10">

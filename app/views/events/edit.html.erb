@@ -1,8 +1,6 @@
 <h1>Events#edit</h1>
 
 <p><%= image_tag @event.image.url %></p>
-<p><%= image_tag @event.image.url(:medium) %></p>
-<p><%= image_tag @event.image.url(:thumb) %></p>
 
 <%= form_for @event do |f| %>
   <%= f.label :name %><br />
