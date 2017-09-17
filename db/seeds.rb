@@ -27,15 +27,6 @@ end
   )
 end
 
-# Media
-3.times do
-  Medium.create(
-    youtube_id: "Zp_NxCyagaw",
-    description: "#{Faker::Lorem.sentence}",
-    image: File.new("#{Rails.root}/app/assets/images/seed_assets/media_images/medium_image.jpg")
-  )
-end
-
 # Users
 User.create(  email: 'test@user.com',
               password: 'foobar',
@@ -47,3 +38,23 @@ User.create(  email: 'test@user.com',
               admin: true,
               avatar: File.new("#{Rails.root}/app/assets/images/seed_assets/user_avatars/user_avatar.jpg")
             )
+
+# Media
+2.times do
+  Medium.create(
+  youtube_id: "Zp_NxCyagaw",
+  description: "#{Faker::Lorem.sentence}",
+  medium_type: 'video',
+  user: User.first
+  )
+end
+
+2.times do
+  Medium.create(
+  youtube_id: "",
+  description: "#{Faker::Lorem.sentence}",
+  image: File.new("#{Rails.root}/app/assets/images/seed_assets/media_images/medium_image.jpg"),
+  medium_type: 'photo',
+  user: User.first
+  )
+end

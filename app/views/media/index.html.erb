@@ -1,5 +1,11 @@
 <h1>Media#index</h1>
 
+<h1>Filter:</h1>
+<h3><%= link_to "All", media_path %></h3>
+<h3><%= link_to "Photo", controller: "media", action: "index", medium_type: 1 %></h3>
+<h3><%= link_to "Video", controller: "media", action: "index", medium_type: 2 %></h3>
+<h3><%= link_to "Audio", controller: "media", action: "index", medium_type: 3 %></h3>
+
 <% @media.each do |medium| %>
 
   <% if !medium.image.blank? %>

@@ -2,7 +2,7 @@ class MediaController < ApplicationController
     before_action :set_medium, only: [:show, :edit, :update, :destroy]
 
   def index
-    @media = Medium.all
+    @media = params[:medium_type].present? ? Medium.medium_type(params[:medium_type]) : Medium.all
   end
 
   def show
