@@ -2,7 +2,7 @@ class PerformersController < ApplicationController
   before_action :set_performer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @performers = Performer.all
+    @performers = params[:branch].present? ? Performer.branch(params[:branch]) : Performer.all
   end
 
   def show

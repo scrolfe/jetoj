@@ -1,5 +1,10 @@
 <h1>Events#index</h1>
 
+<h1>Filter:</h1>
+<h3><%= link_to "All", events_path %></h3>
+<h3><%= link_to "Chicago", controller: "events", action: "index", branch: 1 %></h3>
+<h3><%= link_to "Minneapolis", controller: "events", action: "index", branch: 2 %></h3>
+
 <% @events.each do |event| %>
   <h2><%= event.name %></h2>
   <p><%= image_tag event.image.url %></p>

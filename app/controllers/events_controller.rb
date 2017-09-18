@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = params[:branch].present? ? Event.branch(params[:branch]) : Event.all
   end
 
   def show

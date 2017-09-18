@@ -1,5 +1,10 @@
 <h1>Performers#index</h1>
 
+<h1>Filter:</h1>
+<h3><%= link_to "All", performers_path %></h3>
+<h3><%= link_to "Chicago", controller: "performers", action: "index", branch: 1 %></h3>
+<h3><%= link_to "Minneapolis", controller: "performers", action: "index", branch: 2 %></h3>
+
 <% @performers.each do |performer| %>
   <div>
     <%= link_to image_tag(performer.headshot.url(:thumb)), performer_path(performer) %><br />
