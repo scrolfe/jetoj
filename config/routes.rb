@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :events
   resources :posts
   resources :media
-
+  resources :performers
+  
 end

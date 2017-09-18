@@ -13,7 +13,7 @@ class MediaController < ApplicationController
   end
 
   def create
-    @medium = Medium.new(medium_params)
+    @medium = current_user.media.new(medium_params)
     if @medium.save
       redirect_to @medium
     else

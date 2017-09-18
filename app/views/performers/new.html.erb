@@ -1,0 +1,13 @@
+<h1>Performers#new</h1>
+
+<%= form_for @performer do |f| %>
+  <%= f.label :headshot %><br />
+  <%= f.file_field :headshot %><br />
+  <%= f.label :first_name %><br />
+  <%= f.text_field :first_name %><br />
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name %><br />
+  <%= f.label :bio %><br />
+  <%= f.text_area :bio %><br />
+  <%= f.submit 'Create' %>
+<% end %>

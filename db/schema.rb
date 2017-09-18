@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917160630) do
+ActiveRecord::Schema.define(version: 20170918004528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,20 @@ ActiveRecord::Schema.define(version: 20170917160630) do
     t.integer  "user_id"
     t.integer  "medium_type"
     t.index ["user_id"], name: "index_media_on_user_id", using: :btree
+  end
+
+  create_table "performers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "bio"
+    t.integer  "user_id"
+    t.string   "headshot_file_name"
+    t.string   "headshot_content_type"
+    t.integer  "headshot_file_size"
+    t.datetime "headshot_updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["user_id"], name: "index_performers_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -85,5 +99,6 @@ ActiveRecord::Schema.define(version: 20170917160630) do
 
   add_foreign_key "events", "users"
   add_foreign_key "media", "users"
+  add_foreign_key "performers", "users"
   add_foreign_key "posts", "users"
 end

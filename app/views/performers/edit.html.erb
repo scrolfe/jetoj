@@ -1,0 +1,17 @@
+<h1>Performers#edit</h1>
+
+<%= image_tag @performer.headshot.url(:thumb) %>
+
+<%= form_for @performer do |f| %>
+  <%= f.label :headshot %><br />
+  <%= f.file_field :headshot %><br />
+  <%= f.label :first_name %><br />
+  <%= f.text_field :first_name %><br />
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name %><br />
+  <%= f.label :bio %><br />
+  <%= f.text_area :bio %><br />
+  <%= f.submit 'Update' %>
+<% end %>
+
+<%= button_to 'Delete', performer_path(@performer), confirm: 'Are you sure?', method: :delete %>

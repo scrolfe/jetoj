@@ -14,7 +14,8 @@ require 'faker'
     description: "#{Faker::Lorem.paragraph}",
     location: "#{Faker::Address.street_address}, #{city}, #{state} #{zip}",
     date_time: "#{date_time}",
-    image: File.new("#{Rails.root}/app/assets/images/seed_assets/events_images/event_image.jpg")
+    image: File.new("#{Rails.root}/app/assets/images/seed_assets/events_images/event_image.jpg"),
+    user: User.first
     )
 end
 
@@ -23,7 +24,8 @@ end
   Post.create(
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph,
-    image: File.new("#{Rails.root}/app/assets/images/seed_assets/posts_images/post_image.jpg")
+    image: File.new("#{Rails.root}/app/assets/images/seed_assets/posts_images/post_image.jpg"),
+    user: User.first
   )
 end
 
@@ -41,20 +43,31 @@ User.create(  email: 'test@user.com',
 
 # Media
 2.times do
-  Medium.create(
-  youtube_id: "Zp_NxCyagaw",
-  description: "#{Faker::Lorem.sentence}",
-  medium_type: 'video',
-  user: User.first
+    Medium.create(
+    youtube_id: "Zp_NxCyagaw",
+    description: "#{Faker::Lorem.sentence}",
+    medium_type: 'video',
+    user: User.first
   )
 end
 
 2.times do
   Medium.create(
-  youtube_id: "",
-  description: "#{Faker::Lorem.sentence}",
-  image: File.new("#{Rails.root}/app/assets/images/seed_assets/media_images/medium_image.jpg"),
-  medium_type: 'photo',
-  user: User.first
+    youtube_id: "",
+    description: "#{Faker::Lorem.sentence}",
+    image: File.new("#{Rails.root}/app/assets/images/seed_assets/media_images/medium_image.jpg"),
+    medium_type: 'photo',
+    user: User.first
+  )
+end
+
+# Performers
+5.times do
+  Performer.create(
+    headshot: File.new("#{Rails.root}/app/assets/images/seed_assets/user_avatars/user_avatar.jpg"),
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    bio: Faker::Lorem.paragraph,
+    user: User.first
   )
 end
