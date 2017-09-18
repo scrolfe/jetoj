@@ -16,6 +16,10 @@
     <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/#{medium.youtube_id}" %>"></iframe>
   <% end %>
 
+  <% if !medium.audio.blank? %>
+    <%= audio_tag medium.audio.url, controls: true %>
+  <% end %>
+
   <p>Type: <%= medium.medium_type %></p>
   <p><%= medium.description %></p>
 

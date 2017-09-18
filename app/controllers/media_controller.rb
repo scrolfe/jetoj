@@ -41,7 +41,7 @@ class MediaController < ApplicationController
   private
 
   def medium_params
-    params.require(:medium).permit(:youtube_id, :description, :image)
+    params.require(:medium).permit(:medium_type, :youtube_id, :image, :audio, :description)
   end
 
   def set_medium
