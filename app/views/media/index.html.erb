@@ -12,7 +12,7 @@
     <p><%= image_tag medium.image.url %></p>
   <% end %>
 
-  <% if !medium.youtube_id.empty? %>
+  <% if !medium.youtube_id.blank? %>
     <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/#{medium.youtube_id}" %>"></iframe>
   <% end %>
 

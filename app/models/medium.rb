@@ -7,6 +7,9 @@ class Medium < ApplicationRecord
   has_attached_file :audio
   validates_attachment_content_type :audio, content_type: [ 'audio/mpeg', 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio' ]
 
+  validates_presence_of :medium_type
+
+
   enum medium_type: {"photo":1, "video":2, "audio":3}
 
   scope :medium_type, -> (medium_type) { where medium_type: medium_type }
