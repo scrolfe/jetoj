@@ -5,6 +5,11 @@
 <% end %>
 
 <%= form_for @medium do |f| %>
+  <% Medium.medium_types.each_key do |type| %>
+    <%= f.label type %>
+    <%= f.radio_button :medium_type, type %><br />
+  <% end %>
+  
   <%= f.label :image %><br />
   <%= f.file_field :image %><br />
   <%= f.label :youtube_id %><br />

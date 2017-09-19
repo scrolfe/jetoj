@@ -1,6 +1,11 @@
 <h1>Performers#new</h1>
 
 <%= form_for @performer do |f| %>
+  <% Performer.branches.each_key do |branch| %>
+    <%= f.label branch %>
+    <%= f.radio_button :branch, branch %><br />
+  <% end %>
+
   <%= f.label :headshot %><br />
   <%= f.file_field :headshot %><br />
   <%= f.label :first_name %><br />

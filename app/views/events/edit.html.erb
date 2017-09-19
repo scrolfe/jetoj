@@ -3,6 +3,11 @@
 <p><%= image_tag @event.image.url %></p>
 
 <%= form_for @event do |f| %>
+  <% Event.branches.each_key do |branch| %>
+    <%= f.label branch %>
+    <%= f.radio_button :branch, branch %><br />
+  <% end %>
+
   <%= f.label :name %><br />
   <%= f.text_field :name %><br />
   <%= f.label :image %><br />
