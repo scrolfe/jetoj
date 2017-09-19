@@ -1,7 +1,10 @@
+
+
+
 <nav class="navbar navbar-default site-banner">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "Jetoj", root_path, id: "logo", class: "jetoj-word" %>
+      <%= link_to "Jetoj", root_path, id: "logo", class: "jetoj-word navbar-brand" %>
       <%= link_to "Sign in", new_user_session_path, method: "get" %>
       <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
       <%= link_to "Register", new_user_registration_path %>
