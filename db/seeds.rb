@@ -55,25 +55,25 @@ end
       user: User.first,
       medium_type: type_selector,
       image: image_file,
-      youtube_id: "",
-      audio: "",
+      youtube_id: nil,
+      audio: nil,
       description: description,
     )
   when 2
     Medium.create(
       user: User.first,
       medium_type: type_selector,
-      image: "",
+      image: nil,
       youtube_id: "Zp_NxCyagaw",
-      audio: "",
+      audio: nil,
       description: description,
     )
   when 3
     Medium.create(
       user: User.first,
       medium_type: type_selector,
-      image: "",
-      youtube_id: "",
+      image: nil,
+      youtube_id: nil,
       audio: audio_file,
       description: description,
     )
