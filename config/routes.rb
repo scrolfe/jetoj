@@ -8,7 +8,15 @@ Rails.application.routes.draw do
 
   get 'static_pages/admin'
 
-  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  devise_for :users,
+    skip: :registrations,
+    controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+    put 'users' => 'devise/registrations#update', :as => 'user_registration'
+  end
+
   root to: 'posts#index'
   resources :events
   resources :posts
