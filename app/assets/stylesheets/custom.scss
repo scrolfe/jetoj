@@ -1,5 +1,26 @@
 @import "bootstrap";
 
+/* nav */
+
+.expand-button {
+  margin-top: 5px;
+  display: flex;
+  .square {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 35px;
+    background-color: grey;
+    .inner-square {
+      height: 1px;
+      background-color: black;
+      margin: 5px 2px 5px 2px;
+
+    }
+  }
+
+}
+
 /* variables */
 
 $off-pink: rgb(224, 141, 151);

@@ -1,23 +1,31 @@
 
 
+<% # mobile %>
 
-<nav class="navbar navbar-default site-banner">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <%= link_to "Jetoj", root_path, id: "logo", class: "jetoj-word navbar-brand" %>
-      <%= link_to "Sign in", new_user_session_path, method: "get" %>
-      <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-      <%= link_to "Register", new_user_registration_path %>
-    </div>
-    <div class="navbar-nav navbar-right"
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", static_pages_home_path %></li>
-        <li><%= link_to "About", static_pages_about_path %></li>
-        <li><%= link_to "Posts", posts_path %></li>
-        <li><%= link_to "Events", events_path %></li>
-        <li><%= link_to "Media", media_path %></li>
-        <li><%= link_to "Performers", performers_path %></li>
-      </ul>
-    </div>
+<nav class="navbar navbar-default site-banner container col-xs-18">
+  <div class="logo-container">
+    <%= link_to "Jetoj", root_path, id: "logo", class: "jetoj-word navbar-brand" %>
   </div>
+  <nav class="expand-button container col-xs-3 col-xs-offset-8    ">
+    <div class="square">
+      <div class="inner-square"></div>
+      <div class="inner-square"></div>
+      <div class="inner-square"></div>
+      <div class="inner-square"></div>
+      <div class="inner-square"></div>
+      <div class="inner-square"></div>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <%= link_to "Sign in", new_user_session_path, method: "get" %>
+    <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+    <%= link_to "Register", new_user_registration_path %>
+    <%= link_to "Home", static_pages_home_path %>
+    <%= link_to "About", static_pages_about_path %>
+    <%= link_to "Posts", posts_path %>
+    <%= link_to "Events", events_path %>
+    <%= link_to "Media", media_path %>
+    <%= link_to "Performers", performers_path %>
+  </div>
+</div>
 </nav>
