@@ -9,7 +9,6 @@ User.create(  email: 'test@user.com',
               username: 'testuser',
               first_name: 'test',
               last_name: 'user',
-              bio: Faker::Lorem.paragraph,
               admin: true,
               avatar: File.new("#{Rails.root}/app/assets/images/seed_assets/user_avatars/user_avatar.jpg")
             )
