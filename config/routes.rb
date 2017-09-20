@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   resources :performers
 
   get 'admins/new_user' => 'admins#new_user', as: :admins_new_user
-  post 'admins/create_user/:id' => 'admins#create_user', as: :admins_create_user
+  post 'admins/create_user' => 'admins#create_user', as: :admins_create_user
 end

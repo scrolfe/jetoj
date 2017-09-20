@@ -2,17 +2,21 @@ class AdminsController < ApplicationController
   def new_user
     authorize! :manage, User
     @user = User.new
-    p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    p @user
   end
 
   def create_user
-    @user = User.new(permitted_params.user)
+    @user = User.new(user_params)
     authorize! :manage, User
     if @user.save
-
+      redirect_to '/'
     else
-
+      render 'new_user'
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
