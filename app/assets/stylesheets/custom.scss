@@ -1,52 +1,94 @@
 /* variables */
 
-$off-pink: rgb(224, 141, 151);
+$pastel-pink: rgb(224, 141, 151);
+$pastel-pink-fade: rgba(224, 141, 151, 0.22);
 $pastel-purple: rgb(120, 96, 153);
 $pastel-orange: rgb(235, 90, 80);
-$user-picture: url('../images/seed_assets/user_avatars/user_avatar');
+$performer-picture: url('../images/seed_assets/user_avatars/user_avatar');
 $post-picture: url('../images/seed_assets/posts_images/post_image');
 $medium-picture: url('../images/seed_assets/media_images/medium_image');
 $event-picture: url('../images/seed_assets/events_images/event_image');
-$navbar-container-min-height: 4em;
-
+$navlink-color: black;
 
 /* bootstrap defaults */
 
 $font-family-base:'Open Sans', sans-serif;
-$link-color: $off-pink;
-
-
-
-
+$link-color: black;
 
 
 /* nav */
 
 .navbar-container {
   display: flex;
-  min-height: $navbar-container-min-height;
-  background-color: $pastel-purple;
+  height: 10em;
+  background-color: white;
+  margin: 0 0 4em 0;
   .logo-container {
+    display: block;
     margin: 1em 0 1em 0;
-    height: 100%;
-    #logo {
-      font-size: 3em;
-      font-weight: 700;
+    height: inherit;
+    #jetoj-logo {
+      max-width:780px;
+      max-height:520px;
+      height: inherit;
     }
   }
   .menu {
+    display: flex;
     text-align: center;
     align-self: flex-end;
     .navlink {
-      padding: 0 1em 1em 0;
+      justify-content: center;
+      height: inherit;
+      width: inherit;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: $navlink-color;
+      margin: 0 1.5em 0 1.5em;
+      -webkit-transition: background-color 1s;
+      transition: background-color 1s;
+      &:hover {
+        background-color: $pastel-pink-fade;
+        text-decoration: none;
+        border-radius: 30px;
+      }
     }
   }
 }
 
+/* mobile nav */
+
+@media screen and (max-width: 768px) {
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 20em;
+    background-color: white;
+    .logo-container {
+      margin: 1em;
+      height: inherit;
+      vertical-align: middle;
+      text-align: center;
+
+
+    }
+    .menu {
+      flex-direction: column;
+      width: 10em;
+      .navlink {
+        padding: 0 1em 1em 0;
+        // visibility: hidden;
+      }
+    }
+  }
+}
 
 /* general */
 a {
-  color: $off-pink;
+  color: $pastel-pink;
 }
 
 h1 {
