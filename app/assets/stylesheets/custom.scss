@@ -28,7 +28,7 @@ margin: 0 auto;
   height: 150vh;
   background-color: white;
   #jetoj-logo {
-    padding: 5em 0 5.5em 0;
+    padding: 5em 1em 5.5em 0;
     max-width:780px;
     max-height:520px;
     vertical-align: middle;
@@ -36,7 +36,7 @@ margin: 0 auto;
   #mission {
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
-    padding: 0 0 5em 0;
+    padding: 0 0 5em 3em;
   }
   // #mobile-nav-icon-outer {
   //   border: 1px solid black;
@@ -70,7 +70,7 @@ margin: 0 auto;
 
 /* desktop nav */
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
 //   .navbar-container {
 //     height: 10em;
 //     #jetoj-logo {

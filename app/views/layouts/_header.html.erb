@@ -1,15 +1,6 @@
-<nav class="navbar-container container">
-  <div class="container">
-    <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", id: "jetoj-logo", class: "container col-xs-12 col-centered") %>
-  </div>
-  <div class="container col-xs-12">
-    <i id="mission" class="col-xs-12 col-centered">Jetoj is a music series that makes classical music accessible to all audiences, regardless of opportunity or privilege.</i>
-  </div>
-  <!-- <div id="mobile-nav-icon-outer" class="col-xs-2 col-xs-offset-5">
-    <div id="mobile-nav-icon-inner"></div>
-    <div id="mobile-nav-icon-inner"></div>
-    <div id="mobile-nav-icon-inner"></div>
-  </div> -->
+<nav class="navbar-container container col-xs-12">
+  <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", id: "jetoj-logo", class: "container col-xs-11 col-centered") %>
+  <i id="mission" class="col-xs-10" col-centered">Jetoj is a music series that makes classical music accessible to all audiences, regardless of opportunity or privilege.</i>
   <div class="container">
     <div class="menu col-xs-7 col-xs-offset-2">
       <%= link_to "Home", static_pages_home_path, class: "navlink" %>
