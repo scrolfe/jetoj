@@ -1,25 +1,26 @@
 /* variables */
 
-$pastel-pink: rgb(224, 141, 151);
-$pastel-pink-fade: rgba(224, 141, 151, 0.22);
-$pastel-purple: rgb(120, 96, 153);
-$pastel-orange: rgb(235, 90, 80);
+$pastel-purple: #786099;
+$pastel-orange: #eb4f50;
+$pastel-pink: #f96d90;
+$pastel-pink-fade: rgba(#e08d97, 0.22);
 $performer-picture: url('../images/seed_assets/user_avatars/user_avatar');
 $post-picture: url('../images/seed_assets/posts_images/post_image');
 $medium-picture: url('../images/seed_assets/media_images/medium_image');
 $event-picture: url('../images/seed_assets/events_images/event_image');
+// $media-margin:
 
 /* bootstrap defaults */
 
-$font-family-base:'Open Sans', sans-serif;
+$font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
-/* mobile nav */
+/* mobile header */
 
 .navbar-container {
   align-items: center;
   width: 100%;
-  height: 50vh;
+  height: 150vh;
   background-color: white;
   #jetoj-logo {
     max-width:780px;
