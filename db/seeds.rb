@@ -23,7 +23,7 @@ User.create(  email: 'test@user.com',
   Event.create(
     name: "#{Faker::BossaNova.artist} in #{city}",
     description: "#{Faker::Lorem.paragraph}",
-    location: "#{Faker::Address.street_address}, #{city}, #{state} #{zip}",
+    address: {street_address: Faker::Address.street_address, city: city, state: state, zip: zip},
     date_time: "#{date_time}",
     image: File.new("#{Rails.root}/app/assets/images/seed_assets/events_images/event_image.jpg"),
     user: User.first,

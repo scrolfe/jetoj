@@ -13,9 +13,17 @@
   <%= f.file_field :image %><br />
   <%= f.label :description %><br />
   <%= f.text_area :description %><br />
-  <%= f.label :location %><br />
-  <%= f.text_field :location %><br />
   <%= f.label :date_time %><br />
   <%= f.datetime_select :date_time, {prompt: true, ampm: true}%><br />
+  <%= f.fields_for :address do |a| %>
+    <%= a.label :street_address %>
+    <%= a.text_field :street_address %>
+    <%= a.label :city %>
+    <%= a.text_field :city %>
+    <%= a.label :state %>
+    <%= a.text_field :state %>
+    <%= a.label :zip %>
+    <%= a.number_field :zip %>
+  <% end %>
   <%= f.submit 'Create' %>
 <% end %>

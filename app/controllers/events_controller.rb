@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy]
 
   def index
     @events = params[:branch].present? ? Event.branch(params[:branch]) : Event.all
   end
 
   def show
+    @event = Event.find(params[:id])
   end
 
   def new
@@ -43,7 +44,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location, :date_time, :image)
+    params.require(:event).permit(:name, :description, :date_time, :image, address: [:street_address, :city, :state, :zip, :branch])
   end
 
   def set_event
