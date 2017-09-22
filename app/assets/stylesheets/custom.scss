@@ -23,35 +23,39 @@ $link-color: black;
   height: 150vh;
   background-color: white;
   #jetoj-logo {
+    padding: 2em 0;
+    padding-left: 6%;
     max-width:780px;
     max-height:520px;
     vertical-align: middle;
   }
-  #mobile-nav-icon-outer {
-    border: 1px solid black;
-    width: 6em;
-    height: 2em;
-    border-radius: 30px;
-    display: inline;
-    padding: 0;
-  }
-  #mobile-nav-icon-inner {
-    vertical-align: middle;
-
-    background-color: black;
-    width: 1em;
-    height: 1em;
-    border-radius: 30px;
-    float: left;
-    margin: .47em;
-  }
+  // #mobile-nav-icon-outer {
+  //   border: 1px solid black;
+  //   width: 6em;
+  //   height: 2em;
+  //   border-radius: 30px;
+  //   display: inline;
+  //   padding: 0;
+  // }
+  // #mobile-nav-icon-inner {
+  //   vertical-align: middle;
+  //   background-color: black;
+  //   width: 1em;
+  //   height: 1em;
+  //   border-radius: 30px;
+  //   float: left;
+  //   margin: .47em;
+  // }
   .menu {
-    width: 7em;
-    float: none;
     margin: 0 auto;
+    text-align: center;
     .navlink {
       line-height: 2em;
+      margin-right: 1em;
     }
+  }
+  #jetoj-right {
+    height: 10%
   }
 }
 
