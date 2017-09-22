@@ -15,6 +15,11 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
+.col-centered {
+float: none;
+margin: 0 auto;
+}
+
 /* mobile header */
 
 .navbar-container {
@@ -23,11 +28,15 @@ $link-color: black;
   height: 150vh;
   background-color: white;
   #jetoj-logo {
-    padding: 2em 0;
-    padding-left: 6%;
+    padding: 5em 0 5.5em 0;
     max-width:780px;
     max-height:520px;
     vertical-align: middle;
+  }
+  #mission {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0 0 5em 0;
   }
   // #mobile-nav-icon-outer {
   //   border: 1px solid black;
@@ -47,15 +56,15 @@ $link-color: black;
   //   margin: .47em;
   // }
   .menu {
-    margin: 0 auto;
     text-align: center;
+    visibility: hidden;
     .navlink {
-      line-height: 2em;
+      line-height: 1.5em;
       margin-right: 1em;
     }
   }
   #jetoj-right {
-    height: 10%
+    height: 10%;
   }
 }
 
