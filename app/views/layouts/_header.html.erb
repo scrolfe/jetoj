@@ -1,8 +1,12 @@
-<nav class="navbar-container container-fluid col-md-12 col-xs-18">
-  <div class="logo-container col-xs-6 col-xs-offset-6 col-md-2 col-md-offset-1">
-    <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", id: "jetoj-logo") %>
+<nav class="navbar-container container-fluid">
+  <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", id: "jetoj-logo", class: "col-xs-9") %>
+  <br />
+  <div id="mobile-nav-icon-outer" class="col-xs-2 col-xs-offset-5">
+    <div id="mobile-nav-icon-inner"></div>
+    <div id="mobile-nav-icon-inner"></div>
+    <div id="mobile-nav-icon-inner"></div>
   </div>
-  <div class="menu col-md-8">
+  <div class="menu col-md-6 col-xs-4">
     <%= link_to "Home", static_pages_home_path, class: "navlink" %>
     <%= link_to "About", static_pages_about_path, class: "navlink" %>
     <%= link_to "Posts", posts_path, class: "navlink" %>

@@ -8,82 +8,81 @@ $performer-picture: url('../images/seed_assets/user_avatars/user_avatar');
 $post-picture: url('../images/seed_assets/posts_images/post_image');
 $medium-picture: url('../images/seed_assets/media_images/medium_image');
 $event-picture: url('../images/seed_assets/events_images/event_image');
-$navlink-color: black;
 
 /* bootstrap defaults */
 
 $font-family-base:'Open Sans', sans-serif;
 $link-color: black;
 
-
-/* nav */
+/* mobile nav */
 
 .navbar-container {
-  display: flex;
-  height: 10em;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
   background-color: white;
-  margin: 0 0 4em 0;
-  .logo-container {
-    display: block;
-    margin: 1em 0 1em 0;
-    height: inherit;
-    #jetoj-logo {
-      max-width:780px;
-      max-height:520px;
-      height: inherit;
-    }
+  #jetoj-logo {
+    max-width:780px;
+    max-height:520px;
+    vertical-align: middle;
+  }
+  #mobile-nav-icon-outer {
+    border: 1px solid black;
+    width: 6em;
+    height: 2em;
+    border-radius: 30px;
+    display: inline;
+    padding: 0;
+  }
+  #mobile-nav-icon-inner {
+    vertical-align: middle;
+
+    background-color: black;
+    width: 1em;
+    height: 1em;
+    border-radius: 30px;
+    float: left;
+    margin: .47em;
   }
   .menu {
-    display: flex;
-    text-align: center;
-    align-self: flex-end;
+    width: 7em;
+    float: none;
+    margin: 0 auto;
     .navlink {
-      justify-content: center;
-      height: inherit;
-      width: inherit;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: $navlink-color;
-      margin: 0 1.5em 0 1.5em;
-      -webkit-transition: background-color 1s;
-      transition: background-color 1s;
-      &:hover {
-        background-color: $pastel-pink-fade;
-        text-decoration: none;
-        border-radius: 30px;
-      }
+      line-height: 2em;
     }
   }
 }
 
-/* mobile nav */
+/* desktop nav */
 
-@media screen and (max-width: 768px) {
-
-  .navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 20em;
-    background-color: white;
-    .logo-container {
-      margin: 1em;
-      height: inherit;
-      vertical-align: middle;
-      text-align: center;
-
-
-    }
-    .menu {
-      flex-direction: column;
-      width: 10em;
-      .navlink {
-        padding: 0 1em 1em 0;
-        // visibility: hidden;
-      }
-    }
-  }
+@media (min-width: 992px) {
+//   .navbar-container {
+//     height: 10em;
+//     #jetoj-logo {
+//       max-width:780px;
+//       max-height:520px;
+//     }
+//     .menu {
+//       text-align: center;
+//       align-self: flex-end;
+//       .navlink {
+//         justify-content: center;
+//         height: inherit;
+//         width: inherit;
+//         font-weight: 900;
+//         text-transform: uppercase;
+//         margin: 0 1.5em 0 1.5em;
+//         -webkit-transition: background-color 1s;
+//         transition: background-color 1s;
+//         &:hover {
+//           background-color: $pastel-pink-fade;
+//           text-decoration: none;
+//           border-radius: 30px;
+//         }
+//       }
+//     }
+//   }
 }
 
 /* general */
