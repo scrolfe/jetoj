@@ -1,6 +1,5 @@
   <%= link_to "New Post", new_post_path %>
 
-
   <% @posts.each do |post| %>
     <div class="post-head col-md-10">
       <p><%= image_tag post.image.url(:medium), class: "post-thumbnail" %></p>
