@@ -9,7 +9,6 @@
       <p class="post-body col-xs-12"><%= post.body %></p>
       <%= link_to "Continue Reading...", post_path(post), class: "post-link col-xs-8 col-xs-offset-4" %>
   <% end %>
-=======
 <%= paginate @posts %><br />
 
 <%= link_to "New Post", new_post_path %>
@@ -24,4 +23,3 @@
     <%= link_to "Continue Reading...", post_path(post), class: "post-link" %>
   </div>
 <% end %>
->>>>>>> development
