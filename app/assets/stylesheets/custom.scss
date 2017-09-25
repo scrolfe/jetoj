@@ -115,4 +115,11 @@ h1 {
   }
 }
 
+/* footer */
+
+.footer {
+  border: 1px solid black;
+  background: $pastel-pink-fade;
+}
+
 @import "bootstrap";
