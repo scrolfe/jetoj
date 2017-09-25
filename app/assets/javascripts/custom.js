@@ -4,8 +4,10 @@ console.log('ready');
 // var menu = $('menu')
 
 
-const originalClasses = {
-    
+originalClasses = () => {
+    $('jetoj-logo').removeClass('col-xs-5 col-xs-offset-1')
+    $('jetoj-logo').addClass('col-xs-12');
+    $('.row').children().eq(1).remove()
 }
 
 logoResize = () => {
@@ -29,6 +31,6 @@ $(window).on('scroll', function(e) {
             addJetojRight();
         }
     } else {
-
+        originalClasses();
     }
 })
