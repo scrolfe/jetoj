@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get 'static_pages/admin'
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
-  root to: "posts#index"
+  root to: "static_pages#home"
   resources :events
   resources :posts
   resources :media
   resources :performers
-  
+
 end

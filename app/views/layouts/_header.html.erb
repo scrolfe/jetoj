@@ -1,11 +1,6 @@
 <nav class="navbar-container container-fluid">
-  <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", id: "jetoj-logo", class: "container col-xs-11 col-xs-offset-1 col-s-9") %>
-  <i id="mission" class="col-xs-8 col-xs-offset-2">Jetoj is a music series that makes classical music accessible to all audiences, regardless of opportunity or privilege.</i>
-    <div class="menu col-xs-12 col-s-8">
-      <%= link_to "About", static_pages_about_path, class: "navlink" %>
-      <%= link_to "Events", events_path, class: "navlink" %>
-      <%= link_to "Media", media_path, class: "navlink" %>
-      <%= link_to "Blog", posts_path, class: "navlink" %>
-    </div>
+  <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", id: "jetoj-logo", class: "container col-xs-12 col-s-9") %>
+  <i id="mission" class="col-xs-12">Jetoj is a music series that makes classical music accessible to all audiences, regardless of opportunity or privilege.</i>
     <!-- <%= image_tag("jetoj-right.jpg", class: "col-xs-3") %> -->
+  <%= render "layouts/menu", class: "col-xs-12" %>
 </nav>

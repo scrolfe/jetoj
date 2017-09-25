@@ -8,19 +8,17 @@ $performer-picture: url('../images/seed_assets/user_avatars/user_avatar');
 $post-picture: url('../images/seed_assets/posts_images/post_image');
 $medium-picture: url('../images/seed_assets/media_images/medium_image');
 $event-picture: url('../images/seed_assets/events_images/event_image');
-// $media-margin:
 
 /* bootstrap defaults */
 
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
-.col-centered {
-float: none;
-margin: 0 auto;
+.post-thumbnail {
+  padding-top: 2em;
 }
 
-/* xs header */
+/* header */
 
 .navbar-container {
   align-items: center;
@@ -37,17 +35,21 @@ margin: 0 auto;
     font-family: 'Josefin Sans', sans-serif;
     padding: 0 0 8em 3em;
   }
+  #jetoj-right {
+
+  }
   .menu {
     text-align: center;
     text-transform: uppercase;
+    padding: 0 0 2em 0;
     // visibility: hidden;
+    .hr{
+      padding: 0;
+    }
     .navlink {
       padding-right: 1em;
       font-size: .85em;
     }
-  }
-  #jetoj-right {
-
   }
 }
 
