@@ -14,18 +14,16 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
-.post-thumbnail {
-  padding-top: 2em;
-}
-
 /* header */
 
 .navbar-container {
+  overflow: auto;
+  position: relative;
   align-items: center;
   height: 150vh;
   background-color: white;
   #jetoj-logo {
-    padding: 5em 1em 5.5em 0;
+    padding: 0 1em 5.5em 0;
     max-width:780px;
     max-height:520px;
     vertical-align: middle;
@@ -33,10 +31,7 @@ $link-color: black;
   #mission {
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
-    padding: 0 0 8em 3em;
-  }
-  #jetoj-right {
-
+    padding: 0 0 6em 0;
   }
   .menu {
     text-align: center;
@@ -53,11 +48,20 @@ $link-color: black;
   }
 }
 
+/* header SCROLL */
+
+
+
 /* s header + */
 
 // m header
 
 /* general */
+
+.post-thumbnail {
+  padding-top: 2em;
+}
+
 a {
   color: $pastel-pink;
 }
@@ -65,11 +69,8 @@ a {
 h1 {
   color: pastel-purple
 }
+
 /* typography */
-
-.container {
-
-}
 
 .post-head {
   width: inherit;
