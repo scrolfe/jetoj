@@ -18,6 +18,13 @@ RSpec.describe Event, type: :model do
     expect(event.errors[:name]).to include("can't be blank")
   end
 
+  it "is invalid without a description" do
+    event = FactoryGirl.build(:event, description: nil)
+    event.valid?
+
+    expect(event.errors[:description]).to include("can't be blank")
+  end
+
   it "is invalid without a branch" do
     event = FactoryGirl.build(:event, user: @user, branch: nil)
     event.valid?
@@ -45,4 +52,6 @@ RSpec.describe Event, type: :model do
 
     expect(event.errors[:user]).to include("can't be blank")
   end
+
+  it "displays most recent events at the top"
 end
