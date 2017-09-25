@@ -8,23 +8,20 @@ $performer-picture: url('../images/seed_assets/user_avatars/user_avatar');
 $post-picture: url('../images/seed_assets/posts_images/post_image');
 $medium-picture: url('../images/seed_assets/media_images/medium_image');
 $event-picture: url('../images/seed_assets/events_images/event_image');
-// $media-margin:
 
 /* bootstrap defaults */
 
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
-.col-centered {
-float: none;
-margin: 0 auto;
+.post-thumbnail {
+  padding-top: 2em;
 }
 
-/* mobile header */
+/* header */
 
 .navbar-container {
   align-items: center;
-  width: 100%;
   height: 150vh;
   background-color: white;
   #jetoj-logo {
@@ -36,68 +33,29 @@ margin: 0 auto;
   #mission {
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
-    padding: 0 0 5em 3em;
-  }
-  // #mobile-nav-icon-outer {
-  //   border: 1px solid black;
-  //   width: 6em;
-  //   height: 2em;
-  //   border-radius: 30px;
-  //   display: inline;
-  //   padding: 0;
-  // }
-  // #mobile-nav-icon-inner {
-  //   vertical-align: middle;
-  //   background-color: black;
-  //   width: 1em;
-  //   height: 1em;
-  //   border-radius: 30px;
-  //   float: left;
-  //   margin: .47em;
-  // }
-  .menu {
-    text-align: center;
-    visibility: hidden;
-    .navlink {
-      line-height: 1.5em;
-      margin-right: 1em;
-    }
+    padding: 0 0 8em 3em;
   }
   #jetoj-right {
-    height: 10%;
+
+  }
+  .menu {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 0 2em 0;
+    // visibility: hidden;
+    .hr{
+      padding: 0;
+    }
+    .navlink {
+      padding-right: 1em;
+      font-size: .85em;
+    }
   }
 }
 
-/* desktop nav */
+/* s header + */
 
-@media (min-width: 768px) {
-//   .navbar-container {
-//     height: 10em;
-//     #jetoj-logo {
-//       max-width:780px;
-//       max-height:520px;
-//     }
-//     .menu {
-//       text-align: center;
-//       align-self: flex-end;
-//       .navlink {
-//         justify-content: center;
-//         height: inherit;
-//         width: inherit;
-//         font-weight: 900;
-//         text-transform: uppercase;
-//         margin: 0 1.5em 0 1.5em;
-//         -webkit-transition: background-color 1s;
-//         transition: background-color 1s;
-//         &:hover {
-//           background-color: $pastel-pink-fade;
-//           text-decoration: none;
-//           border-radius: 30px;
-//         }
-//       }
-//     }
-//   }
-}
+// m header
 
 /* general */
 a {
