@@ -118,8 +118,14 @@ h1 {
 /* footer */
 
 .footer {
-  border: 1px solid black;
-  background: $pastel-pink-fade;
+  a.fa {
+    padding: 0 5px 0 5px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
+
+
 
 @import "bootstrap";
