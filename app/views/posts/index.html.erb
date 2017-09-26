@@ -1,17 +1,20 @@
-<%= image_tag "jetoj-blog.jpg", alt: "jetoj blog section", id: "jetoj-blog", class: "col-xs-12" %>
-
-  <%= link_to "New Post", new_post_path, class: "col-xs-4" %>
+<div class="container-fluid">
+  <div class="row">
+    <%= image_tag "jetoj-blog.jpg", alt: "jetoj blog section", id: "jetoj-blog" %>
+  </div>
 
   <% @posts.each do |post| %>
+    <div class="row">
       <p><%= image_tag post.image.url(:medium), class: "post-thumbnail col-xs-12" %></p>
       <h2 class="post-title col-xs-12"><%= post.title %></h2>
       <p class="post-body col-xs-12"><%= post.body %></p>
       <%= link_to "Continue Reading...", post_path(post), class: "post-link col-xs-8 col-xs-offset-4" %>
+    </div>
   <% end %>
 <%= paginate @posts %><br />
-
-<%= link_to "New Post", new_post_path %>
-
+<div class="row">
+  <%= link_to "New Post", new_post_path %>
+</div>
 <% @posts.each do |post| %>
   <div class="post-head col-md-10">
     <p><%= image_tag post.image.url(:medium), class: "post-thumbnail" %></p>
@@ -22,4 +25,5 @@
     <%= link_to "Continue Reading...", post_path(post), class: "post-link" %>
   </div>
 <% end %>
->>>>>>> development
+
+</div>
