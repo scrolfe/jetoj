@@ -32,14 +32,14 @@
       <h3>Featured Event</h3>
     </div>
     <div class="featured-event">
-    <%= link_to(event_path(@events.first)) do %>
-      <h2><%= @events.first.name %></h2>
-      <%= image_tag @events.first.image.url, class: "img-responsive" %>
+    <%= link_to(event_path(Event.find_by_id(3))) do %>
+      <h2><%= Event.find_by_id(3).name %></h2>
+      <%= image_tag Event.find_by_id(3).image.url, class: "img-responsive" %>
     <% end %>
     </div>
 
-    <p><%= @events.first.date_time.strftime("%B %d, %Y") %></p>
-    <p><%= @events.first.description %></p>
+    <p><%= Event.find_by_id(3).date_time.strftime("%B %d, %Y") %></p>
+    <p><%= Event.find_by_id(3).description %></p>
     <hr />
     <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
       <h2>Other important info</h2>
