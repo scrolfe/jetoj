@@ -16,53 +16,19 @@ $link-color: black;
 
 /* header */
 
-.navbar-container {
-  overflow: auto;
-  position: relative;
-  align-items: center;
-  height: 150vh;
-  background-color: white;
+a {
+  margin: 0 1em 0 0;
+}
+
   #jetoj-logo {
-    padding: 0 1em 5.5em 0;
     max-width:780px;
     max-height:520px;
-    vertical-align: middle;
+    width: inherit;
   }
+
   #mission {
-    text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
-    padding: 2em 0 2em 0;
+
   }
-  .menu {
-    text-align: center;
-    text-transform: uppercase;
-    padding: 4em 0 2em 0;
-    // visibility: hidden;
-    .hr{
-      padding: 1em 0 1em 0;
-    }
-    .navlink {
-      padding-right: 1em;
-      font-size: .85em;
-    }
-  }
-}
-
-/* header GENERAL */
-
-/* header LANDING */
-
-#jetoj-logo-scroll {
-
-}
-
-.jetoj-menu-scroll {
-
-}
-
-/* s header + */
-
-// m header
 
 /* general */
 
@@ -70,15 +36,7 @@ $link-color: black;
   padding-top: 2em;
 }
 
-a {
-  color: $pastel-pink;
-}
-
-h1 {
-  color: pastel-purple
-}
-
-/* typography */
+/* post */
 
 .post-head {
   width: inherit;
