@@ -11,24 +11,40 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 
 /* bootstrap defaults */
 
+$navbar-inverse-bg: white;
+$navbar-inverse-border: $navbar-inverse-bg;
+$navbar-inverse-color: $pastel-purple;
+$navbar-inverse-link-color: black;
+$navbar-default-link-color: black;
+$navbar-default-color: white;
+$navbar-default-link-active-color: $pastel-orange;
+$navbar-default-link-hover-color: $pastel-purple;
+
+$navbar-height: 400px;
+
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
+.navbar-brand {
+  height: inherit;
+}
+
 /* header */
+
+.header {
+  height: 6em;
+}
 
 a {
   margin: 0 .75em 0 0;
 }
 
-.header-row {
-  height: auto;
-  margin-bottom: 4em;
-}
-
 #jetoj-logo {
   max-width:780px;
   max-height:520px;
-  width: inherit;
+  min-width: 480px;
+  min-height: 320px;
+  height: inherit;
 }
 
 .menu {
