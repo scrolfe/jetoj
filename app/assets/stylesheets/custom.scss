@@ -11,10 +11,20 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 
 /* bootstrap defaults */
 
+$navbar-inverse-bg: $pastel-purple;
+$navbar-inverse-border: $navbar-inverse-bg;
+$navbar-inverse-color: $pastel-orange;
+$navbar-inverse-link-color: black;
+$navbar-default-link-color: black;
+$navbar-default-color: white;
+$navbar-default-link-active-color: $pastel-orange;
+$navbar-default-link-hover-color: $pastel-purple;
+
+$navbar-height: 400px;
+
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
-/* header */
 
 // .navbar-container {
 //   overflow: auto;
@@ -52,21 +62,40 @@ $link-color: black;
 //   }
 // }
 
-/* header GENERAL */
+$navbar-brand-padding-x: 20px;
+$navbar-brand-padding-y: 20px;
 
-/* header LANDING */
-
-#jetoj-logo-scroll {
-
+.navbar {
+  height: 400px;
 }
 
-.jetoj-menu-scroll {
-
+.navbar-brand {
+  height: 400px;
+  padding: 0;
 }
 
-/* s header + */
 
-// m header
+/* header */
+
+.header {
+  height: 6em;
+}
+
+a {
+  margin: 0 .75em 0 0;
+}
+
+#jetoj-logo {
+  max-width:780px;
+  max-height:520px;
+  min-width: 480px;
+  min-height: 320px;
+  padding: 0;
+}
+
+.menu {
+  font-size: 1.5em;
+}
 
 /* general */
 
@@ -74,15 +103,12 @@ $link-color: black;
   padding-top: 2em;
 }
 
-a {
-  color: $pastel-pink;
+.img {
+  height: inherit;
+  padding: 0;
 }
 
-h1 {
-  color: pastel-purple
-}
-
-/* typography */
+/* post */
 
 .post-head {
   width: inherit;
@@ -139,5 +165,4 @@ h1 {
   border: 1px solid $pastel-orange;
 }
 
-@import "bootstrap-sprockets";
 @import "bootstrap";
