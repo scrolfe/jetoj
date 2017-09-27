@@ -78,4 +78,17 @@ a {
   }
 }
 
+/* footer */
+
+.footer {
+  a.fa {
+    padding: 0 5px 0 5px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+@import "bootstrap-sprockets";
 @import "bootstrap";
