@@ -22,8 +22,6 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to @event
     else
-      p '!!!!!!!!!!1'
-      p @event.errors.details
       render :new
     end
   end

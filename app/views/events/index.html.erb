@@ -1,6 +1,6 @@
 <%= render 'layouts/placeholder_nav' %>
 
-<div class="row" style="border: 1px solid black">
+<div class="row border-util">
   <div class="col-md-4">
     <h4>Locations</h4>
     <%= link_to "All", events_path %>
@@ -14,7 +14,7 @@
     <a href="#">March</a>
   </div>
 </div>
-<div class="row" style="border: 1px dashed red">
+<div class="row border-util">
   <div class="col-md-8">
     <% @events.each do |event| %>
       <%= link_to(event_path(event)) do %>
@@ -27,8 +27,8 @@
       <hr />
     <% end %>
   </div>
-  <div class="col-md-4" style="border-left: 1px solid orange">
-    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+  <div class="col-md-4 border-util">
+    <div class="events-sidebar text-center border-util">
       <h3>Featured Event</h3>
     </div>
     <div class="featured-event">
@@ -41,7 +41,7 @@
     <p><%= Event.find_by_id(3).date_time.strftime("%B %d, %Y") %></p>
     <p><%= Event.find_by_id(3).description %></p>
     <hr />
-    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+    <div class="events-sidebar text-center border-util">
       <h2>Other important info</h2>
       <p>
         Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
@@ -49,7 +49,7 @@
       <p>Lorem ipsum abcdefg</p>
       <p>Lorem ipsum abcdefg</p>
     </div>
-    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+    <div class="events-sidebar text-center border-util">
       <h2>Other important info</h2>
       <p>
         Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
