@@ -11,62 +11,55 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 
 /* bootstrap defaults */
 
+$navbar-inverse-bg: $pastel-purple;
+$navbar-inverse-border: $navbar-inverse-bg;
+$navbar-inverse-color: $pastel-orange;
+$navbar-inverse-link-color: black;
+$navbar-default-link-color: black;
+$navbar-default-color: white;
+$navbar-default-link-active-color: $pastel-orange;
+$navbar-default-link-hover-color: $pastel-purple;
+
+$navbar-height: 400px;
+
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
+
+$navbar-brand-padding-x: 20px;
+$navbar-brand-padding-y: 20px;
+
+.navbar {
+  height: 400px;
+}
+
+.navbar-brand {
+  height: 400px;
+  padding: 0;
+}
+
+
 /* header */
 
-.navbar-container {
-  overflow: auto;
-  position: relative;
-  align-items: center;
-  height: 150vh;
-  background-color: white;
-  #jetoj-logo {
-    padding: 0 1em 5.5em 0;
-    max-width:780px;
-    max-height:520px;
-    vertical-align: middle;
-  }
-  #mission {
-    text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
-    padding: 2em 0 2em 0;
-  }
-  .menu {
-    text-align: center;
-    text-transform: uppercase;
-    padding: 4em 0 2em 0;
-    // visibility: hidden;
-    .hr{
-      padding: 1em 0 1em 0;
-    }
-    .navlink {
-      padding-right: 1em;
-      font-size: .85em;
-    }
-    .userlink {
-      color: $pastel-purple;
-      font-weight: bold;
-    }
-  }
+.header {
+  height: 6em;
 }
 
-/* header GENERAL */
-
-/* header LANDING */
-
-#jetoj-logo-scroll {
-
+a {
+  margin: 0 .75em 0 0;
 }
 
-.jetoj-menu-scroll {
-
+#jetoj-logo {
+  max-width:780px;
+  max-height:520px;
+  min-width: 480px;
+  min-height: 320px;
+  padding: 0;
 }
 
-/* s header + */
-
-// m header
+.menu {
+  font-size: 1.5em;
+}
 
 /* general */
 
@@ -74,15 +67,12 @@ $link-color: black;
   padding-top: 2em;
 }
 
-a {
-  color: $pastel-pink;
+.img {
+  height: inherit;
+  padding: 0;
 }
 
-h1 {
-  color: pastel-purple
-}
-
-/* typography */
+/* post */
 
 .post-head {
   width: inherit;

@@ -1,5 +1,10 @@
-<h1>Posts#show</h1>
+<div class="container">
 
-<p><%= image_tag @post.image.url(:medium) %></p>
-<h2><%= @post.title %></h2>
-<p><%= @post.body %></p>
+  <div class="row">
+    <p><%= image_tag @post.image.url(:medium) %></p>
+  </div>
+  <div class="row">
+    <h2><%= @post.title %></h2>
+    <p><%= @post.body %></p>
+  </div>
+</div>

@@ -1,23 +1,14 @@
-<div class='col-md-8 col-md-offset-2 col-xs-12 container'>
-<%= render "layouts/header_landing" %>
 
-<h1 class="bold-headline">About Jetoj</h1>
+  <div class="container-fluid">
+    <%= render "layouts/header_landing" %>
 
-<h3 class='mission-statement'>Jetoj is a music series that makes classical music accessible to all audiences, regardless of opportunity or privilege.</h3>
-<br />
-<h3 class='mission-statement'>
-Jetoj focuses on bringing classical music to a broader audience. In today's world of media and a culture that gravitates toward mainstream music classical music is often tossed off as music for 'old people' or only elite audiences. Jetoj prides itself in the variety of music in each program.
-</h3>
-<br />
-<h3 class='mission-statement'>
-Jetoj works to make classical music accessible to everyone by exploring genre, concert model, presentation, audience engagement, location, repertoire, and instrumentation, through a collaborative group of musicians prepared to present music in an unconventional way.</h3>
-</h3>
-<br />
-<hr />
+    <div class="row">
+      <h1 class="bold-headline">About Jetoj</h1>
+    </div>
+    <div class="row">
+      Jetoj focuses on bringing classical music to a broader audience. In today's world of media and a culture that gravitates toward mainstream music classical music is often tossed off as music for 'old people' or only elite audiences. Jetoj prides itself in the variety of music in each program.
+    <br /><br />
+      Jetoj works to make classical music accessible to everyone by exploring genre, concert model, presentation, audience engagement, location, repertoire, and instrumentation, through a collaborative group of musicians prepared to present music in an unconventional way.
+    </div>
 
-<h1 class="posts-heading">Latest Updates from Jetoj</h1>
-<h2 class="post-title">Post Title</h2>
-<div class="image-container"><%= image_tag "seed_assets/posts_images/post_image.jpg" %></div>
-<p class="detail-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-</div>
+    <%= render 'layouts/members' %>
