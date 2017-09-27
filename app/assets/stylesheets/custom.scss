@@ -11,15 +11,6 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 
 /* bootstrap defaults */
 
-$navbar-inverse-bg: $pastel-purple;
-$navbar-inverse-border: $navbar-inverse-bg;
-$navbar-inverse-color: $pastel-orange;
-$navbar-inverse-link-color: black;
-$navbar-default-link-color: black;
-$navbar-default-color: white;
-$navbar-default-link-active-color: $pastel-orange;
-$navbar-default-link-hover-color: $pastel-purple;
-
 $navbar-height: auto ;
 
 $font-family-base:'Josefin Sans', sans-serif;
@@ -29,10 +20,57 @@ $link-color: black;
 $navbar-brand-padding-x: 20px;
 $navbar-brand-padding-y: 20px;
 
-.navbar-brand {
+@media (max-width: 991px) {
+  .navbar-nav {
+    padding: 1em 0 1em 0;
+    display: flex;
+    flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    line-height: 100%;
+
+    .nav-link {
+      font-size: 1em;
+    }
+
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
 }
 
+@media (min-width: 992px) {
+  .navbar-nav {
+    padding: 10em 0 1em 0;
+    display: flex;
+    flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    line-height: 100%;
 
+    .nav-link {
+      font-size: 1.5em;
+    }
+
+  }
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  height: 100%;
+}
 
 /* header */
 
