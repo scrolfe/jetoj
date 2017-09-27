@@ -1,83 +1,79 @@
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <%= image_tag "https://s3.us-east-2.amazonaws.com/jetoj/jetoj-events.png", alt: "jetoj events section", id: "jetoj-events" %>
+  </div>
+</div>
+
 <%= render 'layouts/placeholder_nav' %>
 
 <div class="row">
-
-<div class="col-md-8 border-util">
-  <div class="border-util">
-    <h2><%= @event.name %></h2>
-  </div>
-
-  <div class="border-util">
-    <p><%= image_tag @event.image.url, class: 'img-responsive' %></p>
-  </div>
-
-  <div class="row event-info border-util">
-    <div class="col-md-4">
-      <h4>Location</h4>
-      <p><%= @event.address['street_address'] %></p>
-      <p><%= @event.address['city'] %>, <%= @event.address['state'] %> <%= @event.address['zip'][0,5] %></p>
+  <div class="col-md-8 border-util">
+    <div class="border-util">
+      <h2><%= @event.name %></h2>
     </div>
 
-    <div class="col-md-4">
-      <h4>Date and Time</h4>
-      <p><%= @event.date_time.strftime("%B %d, %Y") %></p>
-      <p><%= @event.date_time.strftime("%l:%M %p") %></p>
+    <div class="border-util">
+      <p><%= image_tag @event.image.url, class: 'img-responsive' %></p>
     </div>
 
-    <div class="col-md-4">
-      <h4>Price</h4>
-      <p>Free</p>
-      <p>Suggested contribution: $20</p>
+    <div class="row event-info border-util">
+      <div class="col-md-4">
+        <h4>Location</h4>
+        <p><%= @event.address['street_address'] %></p>
+        <p><%= @event.address['city'] %>, <%= @event.address['state'] %> <%= @event.address['zip'][0,5] %></p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Date and Time</h4>
+        <p><%= @event.date_time.strftime("%B %d, %Y") %></p>
+        <p><%= @event.date_time.strftime("%l:%M %p") %></p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Price</h4>
+        <p>Free</p>
+        <p>Suggested contribution: $20</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p><%= @event.description %></p>
+        <%= link_to "Back to All Events", events_path, class: "btn btn-default" %>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <p><%= @event.description %></p>
-      <%= link_to "Back to All Events", events_path, class: "btn btn-default" %>
+  <div class="col-md-4 border-util">
+    <div class="events-sidebar text-center border-util">
+      <h3>Featured Event</h3>
+    </div>
+    <div class="featured-event border-util">
+      <%= link_to(event_path(Event.find_by_id(3))) do %>
+        <h2><%= Event.find_by_id(3).name %></h2>
+        <%= image_tag Event.find_by_id(3).image.url, class: "img-responsive" %>
+      <% end %>
+      <p><%= Event.find_by_id(3).date_time.strftime("%B %d, %Y") %></p>
+      <p><%= Event.find_by_id(3).description %></p>
+    </div>
+
+    <hr />
+
+    <div class="events-sidebar text-center border-util">
+      <h2>Other important info</h2>
+      <p>
+        Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
+      </p>
+      <p>Lorem ipsum abcdefg</p>
+      <p>Lorem ipsum abcdefg</p>
+    </div>
+    <div class="events-sidebar text-center border-util">
+      <h2>Other important info</h2>
+      <p>
+        Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
+      </p>
+      <p>Lorem ipsum abcdefg</p>
+      <p>Lorem ipsum abcdefg</p>
     </div>
   </div>
 </div>
-
-<div class="col-md-4 border-util">
-  <div class="events-sidebar text-center border-util">
-    <h3>Featured Event</h3>
-  </div>
-  <div class="featured-event border-util">
-    <%= link_to(event_path(Event.find_by_id(3))) do %>
-      <h2><%= Event.find_by_id(3).name %></h2>
-      <%= image_tag Event.find_by_id(3).image.url, class: "img-responsive" %>
-    <% end %>
-    <p><%= Event.find_by_id(3).date_time.strftime("%B %d, %Y") %></p>
-    <p><%= Event.find_by_id(3).description %></p>
-  </div>
-
-  <hr />
-
-  <div class="events-sidebar text-center border-util">
-    <h2>Other important info</h2>
-    <p>
-      Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
-    </p>
-    <p>Lorem ipsum abcdefg</p>
-    <p>Lorem ipsum abcdefg</p>
-  </div>
-  <div class="events-sidebar text-center border-util">
-    <h2>Other important info</h2>
-    <p>
-      Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
-    </p>
-    <p>Lorem ipsum abcdefg</p>
-    <p>Lorem ipsum abcdefg</p>
-  </div>
-</div>
-
-</div>
-
-
-<!-- <div class="col-md-8 border-util">
-  <%= image_tag "https://s3.us-east-2.amazonaws.com/jetoj/map.png", class: 'img-responsive' %>
-  <p>
-    <%= @event.address['street_address'] %> <%= @event.address['city'] %>, <%= @event.address['state'] %> <%= @event.address['zip'][0,5] %>
-  </p>
-</div> -->
