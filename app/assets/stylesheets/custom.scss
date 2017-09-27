@@ -20,7 +20,7 @@ $navbar-default-color: white;
 $navbar-default-link-active-color: $pastel-orange;
 $navbar-default-link-hover-color: $pastel-purple;
 
-$navbar-height: 400px;
+$navbar-height: auto ;
 
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
@@ -29,14 +29,9 @@ $link-color: black;
 $navbar-brand-padding-x: 20px;
 $navbar-brand-padding-y: 20px;
 
-.navbar {
-  height: 400px;
+.navbar-brand {
 }
 
-.navbar-brand {
-  height: 400px;
-  padding: 0;
-}
 
 
 /* header */
@@ -52,9 +47,9 @@ a {
 #jetoj-logo {
   max-width:780px;
   max-height:520px;
-  min-width: 480px;
-  min-height: 320px;
   padding: 0;
+  max-width: 100%;
+  height: auto;
 }
 
 .menu {
@@ -67,10 +62,7 @@ a {
   padding-top: 2em;
 }
 
-.img {
-  height: inherit;
-  padding: 0;
-}
+
 
 /* post */
 

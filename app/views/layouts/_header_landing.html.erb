@@ -1,18 +1,21 @@
 <div class="container-fluid">
   <nav class="navbar navbar-inverse">
-    <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "navbar-brand") %>
-    <ul class="navbar-nav nav">
-      <li class="nav-tabs"><%= link_to "About", static_pages_about_path %></li>
-      <li class="nav-tabs"><%= link_to "Events", events_path %></li>
-      <li class="nav-tabs"><%= link_to "Media", media_path %></li>
-      <li class="nav-tabs"><%= link_to "Blog", posts_path %></li>
+    <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "col-xs-12 col-sm-10 col-md-4 img-fluid navbar-brand") %>
+    <ul class="col-xs-12 col-sm-10 col-md-4 nav">
+      <li class="nav-link"><%= link_to "About", static_pages_about_path %></li>
+      <li class="nav-link"><%= link_to "Events", events_path %></li>
+      <li class="nav-link"><%= link_to "Media", media_path %></li>
+      <li class="nav-link"><%= link_to "Blog", posts_path %></li>
+
       <% if user_signed_in? %>
         <% if current_user.admin %>
-          <li class="nav-tabs"><%= link_to "Admin", edit_user_registration_path, class: "navlink userlink" %></li>
+          <div class="dropdown-menu">
+            <%= link_to "Admin", edit_user_registration_path, class: "navlink userlink dropdown-item" %></li>
+          </div>
         <% else %>
-          <li class="nav-tabs"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
+          <li class="nav-link"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
         <% end %>
-        <li class="nav-tabs"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
+        <li class="nav-link"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
       <% end %>
       </ul>
     </nav>
