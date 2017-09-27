@@ -2,7 +2,11 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:edit, :update, :destroy]
 
   def index
-    @events = params[:branch].present? ? Event.branch(params[:branch]).order('date_time DESC') : Event.order('date_time DESC')
+    if params[:branch].present?
+      @events = Event.where("DATE(date_time) >= DATE(?)", DateTime.now).branch(params[:branch]).order('date_time ASC')
+    else
+      @events = Event.where("DATE(date_time) >= DATE(?)", DateTime.now).order('date_time ASC')
+    end
   end
 
   def show

@@ -45,6 +45,10 @@ $link-color: black;
       padding-right: 1em;
       font-size: .85em;
     }
+    .userlink {
+      color: $pastel-purple;
+      font-weight: bold;
+    }
   }
 }
 
@@ -115,4 +119,17 @@ h1 {
   }
 }
 
+/* footer */
+
+.footer {
+  a.fa {
+    padding: 0 5px 0 5px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+@import "bootstrap-sprockets";
 @import "bootstrap";

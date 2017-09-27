@@ -1,16 +1,61 @@
-<h1>Events#index</h1>
+<%= render 'layouts/placeholder_nav' %>
 
-<h1>Filter:</h1>
-<h3><%= link_to "All", events_path %></h3>
-<h3><%= link_to "Chicago", controller: "events", action: "index", branch: 1 %></h3>
-<h3><%= link_to "Minneapolis", controller: "events", action: "index", branch: 2 %></h3>
+<div class="row" style="border: 1px solid black">
+  <div class="col-md-4">
+    <h4>Locations</h4>
+    <%= link_to "All", events_path %>
+    <%= link_to "Chicago", controller: "events", action: "index", branch: 1 %>
+    <%= link_to "Minneapolis", controller: "events", action: "index", branch: 2 %>
+  </div>
+  <div class="col-md-4">
+    <h4>Filter by Month</h4>
+    <a href="#">January</a>
+    <a href="#">February</a>
+    <a href="#">March</a>
+  </div>
+</div>
+<div class="row" style="border: 1px dashed red">
+  <div class="col-md-8">
+    <% @events.each do |event| %>
+      <%= link_to(event_path(event)) do %>
+        <h2><%= event.name %></h2>
+        <%= image_tag event.image.url, class: "img-responsive" %>
+      <% end %>
 
-<% @events.each do |event| %>
-  <h2><%= event.name %></h2>
-  <p><%= image_tag event.image.url %></p>
-  <p><%= event.date_time %></p>
-  <p>
-    <%= event.address['street_address'] %> <%= event.address['city'] %>, <%= event.address['state'] %> <%= event.address['zip'][0,5] %>
-  </p>
-  <p><%= event.description %></p>
-<% end %>
+      <p><%= event.date_time.strftime("%B %d, %Y") %></p>
+      <p><%= event.description %></p>
+      <hr />
+    <% end %>
+  </div>
+  <div class="col-md-4" style="border-left: 1px solid orange">
+    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+      <h3>Featured Event</h3>
+    </div>
+    <div class="featured-event">
+    <%= link_to(event_path(Event.find_by_id(3))) do %>
+      <h2><%= Event.find_by_id(3).name %></h2>
+      <%= image_tag Event.find_by_id(3).image.url, class: "img-responsive" %>
+    <% end %>
+    </div>
+
+    <p><%= Event.find_by_id(3).date_time.strftime("%B %d, %Y") %></p>
+    <p><%= Event.find_by_id(3).description %></p>
+    <hr />
+    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+      <h2>Other important info</h2>
+      <p>
+        Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
+      </p>
+      <p>Lorem ipsum abcdefg</p>
+      <p>Lorem ipsum abcdefg</p>
+    </div>
+    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+      <h2>Other important info</h2>
+      <p>
+        Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
+      </p>
+      <p>Lorem ipsum abcdefg</p>
+      <p>Lorem ipsum abcdefg</p>
+    </div>
+  </div>
+</div>
