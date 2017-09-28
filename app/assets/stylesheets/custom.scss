@@ -166,8 +166,20 @@ a {
   font-size: 2.75em;
 }
 
+.menu-landing {
+  font-size: 1.5em;
+}
+
+.header-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+}
+
 .menu {
   font-size: 1.5em;
+  padding: 0;
 }
 
 /* general */
