@@ -1,0 +1,11 @@
+<%= render 'filters' %>
+
+<div class="row">
+  <div class="ml-auto mr-auto">
+    <% @media.each do |medium| %>
+      <div class="col-sm-12">
+        <%= audio_tag medium.audio.url, controls: true %>
+      </div>
+    <% end %>
+  </div>
+</div>

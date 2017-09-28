@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: "static_pages#home"
   get 'static_pages/about'
   get 'static_pages/home'
-  # get 'static_pages/admin' ###9/28### not using this route; admin "dashboard" is edit_user_registration_path
 
   devise_for :users,
     skip: :registrations,
@@ -16,8 +15,12 @@ Rails.application.routes.draw do
 
   resources :events
   resources :posts
-  resources :media
   resources :performers
+
+  get 'media/photo' => 'media#photo', as: :media_photo
+  get 'media/video' => 'media#video', as: :media_video
+  get 'media/audio' => 'media#audio', as: :media_audio
+  resources :media, except: [:index, :show]
 
   get 'admins/new_user' => 'admins#new_user', as: :admins_new_user
   post 'admins/create_user' => 'admins#create_user', as: :admins_create_user

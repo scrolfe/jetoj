@@ -1,0 +1,9 @@
+<%= render 'filters' %>
+
+<div class="row">
+  <% @media.each do |medium| %>
+    <div class="col-sm-4">
+      <%= image_tag medium.image.url, class: "img-fluid border-util" %>
+    </div>
+  <% end %>
+</div>

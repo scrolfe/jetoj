@@ -26,8 +26,6 @@ class Medium < ApplicationRecord
 
   enum medium_type: {"photo":1, "video":2, "audio":3}
 
-  scope :medium_type, -> (medium_type) { where medium_type: medium_type }
-
   def is_type_photo?
     medium_type == "photo"
   end
@@ -39,4 +37,8 @@ class Medium < ApplicationRecord
   def is_type_audio?
     medium_type == "audio"
   end
+
+  scope :photo, -> { where medium_type: "photo" }
+  scope :video, -> { where medium_type: "video" }
+  scope :audio, -> { where medium_type: "audio" }
 end

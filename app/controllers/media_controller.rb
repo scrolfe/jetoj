@@ -1,8 +1,16 @@
 class MediaController < ApplicationController
-    before_action :set_medium, only: [:show, :edit, :update, :destroy]
+  before_action :set_medium, only: [:edit, :update, :destroy]
 
-  def index
-    @media = params[:medium_type].present? ? Medium.medium_type(params[:medium_type]) : Medium.all
+  def photo
+    @media = Medium.photo
+  end
+
+  def video
+    @media = Medium.video
+  end
+
+  def audio
+    @media = Medium.audio
   end
 
   def show
@@ -34,7 +42,7 @@ class MediaController < ApplicationController
 
   def destroy
     if @medium.destroy
-      redirect_to media_path
+      redirect_to media_photo_path
     end
   end
 
