@@ -1,27 +1,33 @@
+<div class="container-fluid">
   <nav class="navbar header">
-    <div class="row header-row ">
+    <div class="row header-row border-util">
+      <div class="col-xs-12 col-sm-12 col-md-2">
+        <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "img-fluid navbar-brand header-brand") %>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-10">
+        <ul class="nav menu d-flex align-items-center">
+          <li class="nav-link menu-item"><%= link_to "About", static_pages_about_path %></li>
+          <li class="nav-link menu-item"><%= link_to "Events", events_path %></li>
+          <li class="nav-link menu-item"><%= link_to "Media", media_photo_path %></li>
+          <li class="nav-link menu-item"><%= link_to "Blog", posts_path %></li>
 
-      <ul class="nav menu">
-        <li class="nav-link menu-item"><%= link_to "About", static_pages_about_path %></li>
-        <li class="nav-link menu-item"><%= link_to "Events", events_path %></li>
-        <li class="nav-link menu-item"><%= link_to "Media", media_photo_path %></li>
-        <li class="nav-link menu-item"><%= link_to "Blog", posts_path %></li>
-
-        <% if user_signed_in? %>
-          <% if current_user.admin %>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Admin
-            </button>
-            <div class="dropdown-menu">
-              <%= link_to "Admin", edit_user_registration_path, class: "menu-item navlink userlink dropdown-item" %></li>
+          <% if user_signed_in? %>
+            <% if current_user.admin %>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+              </button>
+              <div class="dropdown-menu">
+                <%= link_to "Admin", edit_user_registration_path, class: "menu-item navlink userlink dropdown-item" %></li>
+              </div>
             </div>
-          </div>
-          <% else %>
-            <li class="nav-link menu-item"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
+            <% else %>
+              <li class="nav-link menu-item"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
+            <% end %>
+            <li class="nav-link menu-item"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
           <% end %>
-          <li class="nav-link menu-item"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
-        <% end %>
-        </ul>
+          </ul>
+        </div>
       </div>
     </nav>
+</div>
