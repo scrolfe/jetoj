@@ -1,45 +1,56 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <%= image_tag "jetoj-blog.jpg", alt: "jetoj blog section", id: "jetoj-blog" %>
-    </div>
-
-  <%= render "layouts/placeholder_nav" %>
-
-  <div class="row posts-section">
-    <div class="col-xs-8 col-xs-offset-2">
-
-      <%= link_to "New Post", new_post_path, class: "col-xs-4" %>
-
-      <% @posts.each do |post| %>
-        <div class="row border-util">
-
-          <div class="col-xs-8">
-            <%= image_tag post.image.url(:medium), class: "img-responsive" %>
-          </div>
-
-          <div class="col-xs-4">
-            <h2><%= post.title %></h2>
-          </div>
-
-          <div class="col-xs-12"
-            <p>Posted by <%= post.user.name %> | <%= time_ago_in_words post.created_at %> ago</p>
-          </div>
-
-          <div class="col-xs-12">
-            <p><%= post.body %></p>
-            <%= link_to "Continue Reading...", post_path(post) %>
-          </div>
-        </div>
-
-        <br />
-        <hr />
-        <br />
-      <% end %>
-
-      <div class="row text-center">
-        <%= paginate @posts %><br />
-      </div>
-    </div>
+<div class="row">
+  <div class="ml-auto mr-auto">
+    <%= image_tag "jetoj-blog.jpg", alt: "jetoj blog section", id: "jetoj-blog" %>
   </div>
 </div>
+
+<div class="row">
+  <%= render "layouts/placeholder_nav" %>
+</div>
+
+<h3><%= link_to "New Post", new_post_path %></h3>
+
+<br />
+<br />
+
+<div class="row posts-section">
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-md-8">
+        <%= image_tag post.image.url(:medium), class: "img-fluid" %>
+      </div>
+
+      <div class="col-md-4">
+        <h4><%= link_to post.title, post_path(post) %></h4>
+      </div>
+
+      <div class="col-md-12">
+        <hr />
+        <p>Posted by <%= post.user.name %> | <%= time_ago_in_words post.created_at %> ago</p>
+        <hr />
+      </div>
+
+      <div class="col-md-12">
+        <p><%= post.body %></p>
+        <%= link_to "Continue Reading...", post_path(post) %>
+      </div>
+    </div>
+    <br />
+    <hr />
+    <br />
+  <% end %>
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="row">
+  <div class="ml-auto mr-auto">
+    <%= paginate @posts %>
+  </div>
+</div>
+
+<br />
+<br />
+<br />
