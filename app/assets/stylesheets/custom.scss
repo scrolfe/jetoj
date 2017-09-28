@@ -11,16 +11,7 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 
 /* bootstrap defaults */
 
-$navbar-inverse-bg: $pastel-purple;
-$navbar-inverse-border: $navbar-inverse-bg;
-$navbar-inverse-color: $pastel-orange;
-$navbar-inverse-link-color: black;
-$navbar-default-link-color: black;
-$navbar-default-color: white;
-$navbar-default-link-active-color: $pastel-orange;
-$navbar-default-link-hover-color: $pastel-purple;
-
-$navbar-height: 400px;
+$navbar-height: auto ;
 
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
@@ -28,16 +19,92 @@ $link-color: black;
 
 $navbar-brand-padding-x: 20px;
 $navbar-brand-padding-y: 20px;
+$navbar-padding-y: 0;
+$navbar-padding-x: 0;
 
-.navbar {
-  height: 400px;
+@media (max-width: 767px) {
+  .navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; // allow us to do the line break for collapsing content
+    align-items: center;
+    justify-content: space-between; // space out brand from logo
+    padding: $navbar-padding-y $navbar-padding-x;
+
+    > .container,
+    > .container-fluid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+  .navbar-nav {
+    padding: 1em 0 1em 0;
+    display: flex;
+    flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    li {
+      width: 25%;
+      a {
+
+      }
+      .nav-link {
+        font-size: 1em;
+      }
+    }
+
+
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
 }
 
-.navbar-brand {
-  height: 400px;
-  padding: 0;
-}
+@media (min-width: 768px) {
+  .navbar-nav {
+    padding: 10em 0 1em 0;
+    display: flex;
+    flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    li {
+      width: 25%;
+      justify-content: space-between;
+      a {
 
+      }
+      .nav-link {
+        font-size: 1em;
+        margin-right: 1em;
+      }
+    }
+
+    .nav-link {
+      font-size: 1.5em;
+    }
+
+  }
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  height: 100%;
+}
 
 /* header */
 
@@ -52,9 +119,9 @@ a {
 #jetoj-logo {
   max-width:780px;
   max-height:520px;
-  min-width: 480px;
-  min-height: 320px;
   padding: 0;
+  max-width: 100%;
+  height: auto;
 }
 
 .menu {
@@ -67,10 +134,7 @@ a {
   padding-top: 2em;
 }
 
-.img {
-  height: inherit;
-  padding: 0;
-}
+
 
 /* post */
 
@@ -121,5 +185,5 @@ a {
 }
 
 
-@import "bootstrap-sprockets";
+// @import "bootstrap-sprockets"; ###9/28### not needed with the newer bootstrap gem
 @import "bootstrap";

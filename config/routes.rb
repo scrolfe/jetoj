@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "static_pages#home"
   get 'static_pages/about'
   get 'static_pages/home'
-  get 'static_pages/admin'
+  # get 'static_pages/admin' ###9/28### not using this route; admin "dashboard" is edit_user_registration_path
 
   devise_for :users,
     skip: :registrations,
