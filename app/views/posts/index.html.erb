@@ -1,29 +1,45 @@
 <div class="container">
   <div class="row">
-    <%= image_tag "jetoj-blog.jpg", alt: "jetoj blog section", id: "jetoj-blog" %>
-  </div>
-
-  <% @posts.each do |post| %>
-    <div class="row">
-      <p><%= image_tag post.image.url(:medium), class: "post-thumbnail col-xs-12" %></p>
-      <h2 class="post-title col-xs-12"><%= post.title %></h2>
-      <p class="post-body col-xs-12"><%= post.body %></p>
-      <%= link_to "Continue Reading...", post_path(post), class: "post-link col-xs-8 col-xs-offset-4" %>
+    <div class="col-xs-12 text-center">
+      <%= image_tag "jetoj-blog.jpg", alt: "jetoj blog section", id: "jetoj-blog" %>
     </div>
-  <% end %>
-<%= paginate @posts %><br />
-<div class="row">
-  <%= link_to "New Post", new_post_path %>
-</div>
-<% @posts.each do |post| %>
-  <div class="post-head col-md-10">
-    <p><%= image_tag post.image.url(:medium), class: "post-thumbnail" %></p>
-    <h2 class="post-title"><%= post.title %></h2>
-  </div>
-  <div class="post-tail col-md-10">
-    <p class="post-body"><%= post.body %></p>
-    <%= link_to "Continue Reading...", post_path(post), class: "post-link" %>
-  </div>
-<% end %>
 
+  <%= render "layouts/placeholder_nav" %>
+
+  <div class="row posts-section">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <%= link_to "New Post", new_post_path, class: "col-xs-4" %>
+
+      <% @posts.each do |post| %>
+        <div class="row border-util">
+
+          <div class="col-xs-8">
+            <%= image_tag post.image.url(:medium), class: "img-responsive" %>
+          </div>
+
+          <div class="col-xs-4">
+            <h2><%= post.title %></h2>
+          </div>
+
+          <div class="col-xs-12"
+            <p>Posted by <%= post.user.name %> | <%= time_ago_in_words post.created_at %> ago</p>
+          </div>
+
+          <div class="col-xs-12">
+            <p><%= post.body %></p>
+            <%= link_to "Continue Reading...", post_path(post) %>
+          </div>
+        </div>
+
+        <br />
+        <hr />
+        <br />
+      <% end %>
+
+      <div class="row text-center">
+        <%= paginate @posts %><br />
+      </div>
+    </div>
+  </div>
 </div>

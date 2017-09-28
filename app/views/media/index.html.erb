@@ -1,26 +1,32 @@
-<h1>Media#index</h1>
+<%= render "layouts/placeholder_nav" %>
 
-<h1>Filter:</h1>
-<h3><%= link_to "All", media_path %></h3>
-<h3><%= link_to "Photo", controller: "media", action: "index", medium_type: 1 %></h3>
-<h3><%= link_to "Video", controller: "media", action: "index", medium_type: 2 %></h3>
-<h3><%= link_to "Audio", controller: "media", action: "index", medium_type: 3 %></h3>
+<div class="row border-util">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="row media-filters text-center border-util">
+      <%= link_to "All", media_path %> |
+      <%= link_to "Photo", controller: "media", action: "index", medium_type: 1 %> |
+      <%= link_to "Video", controller: "media", action: "index", medium_type: 2 %> |
+      <%= link_to "Audio", controller: "media", action: "index", medium_type: 3 %>
+    </div>
+    <br />
 
-<% @media.each do |medium| %>
-
-  <% if medium.image_file_name %>
-    <p><%= image_tag medium.image.url %></p>
-  <% end %>
-
-  <% if medium.youtube_id %>
-    <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/#{medium.youtube_id}" %>"></iframe>
-  <% end %>
-
-  <% if medium.audio_file_name %>
-    <%= audio_tag medium.audio.url, controls: true %>
-  <% end %>
-
-  <p>Type: <%= medium.medium_type %></p>
-  <p><%= medium.description %></p>
-
-<% end %>
+    <div class="row media-section border-util">
+      <% @media.each do |medium| %>
+        <% case medium.medium_type %>
+        <% when "photo" %>
+          <%= image_tag medium.image.url, class: "img-responsive" %>
+        <% when "video" %>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/#{medium.youtube_id}" %>" class="embed-responsive-item" allowfullscreen></iframe>
+          </div>
+        <% when "audio" %>
+          <%= audio_tag medium.audio.url, controls: true %>
+        <% end %>
+        <br />
+        <p><%= medium.description %></p>
+        <hr />
+        <br />
+      <% end %>
+    </div>
+  </div>
+</div>

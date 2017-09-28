@@ -17,6 +17,42 @@ $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
 
+// .navbar-container {
+//   overflow: auto;
+//   position: relative;
+//   align-items: center;
+//   height: 150vh;
+//   background-color: white;
+//   #jetoj-logo {
+//     padding: 0 1em 5.5em 0;
+//     max-width:780px;
+//     max-height:520px;
+//     vertical-align: middle;
+//   }
+//   #mission {
+//     text-align: center;
+//     font-family: 'Josefin Sans', sans-serif;
+//     padding: 2em 0 2em 0;
+//   }
+//   .menu {
+//     text-align: center;
+//     text-transform: uppercase;
+//     padding: 4em 0 2em 0;
+//     // visibility: hidden;
+//     .hr{
+//       padding: 1em 0 1em 0;
+//     }
+//     .navlink {
+//       padding-right: 1em;
+//       font-size: .85em;
+//     }
+//     .userlink {
+//       color: $pastel-purple;
+//       font-weight: bold;
+//     }
+//   }
+// }
+
 $navbar-brand-padding-x: 20px;
 $navbar-brand-padding-y: 20px;
 $navbar-padding-y: 0;
@@ -190,6 +226,10 @@ a {
   }
 }
 
+/* utilities */
 
-@import "bootstrap-sprockets";
+.border-util {
+  border: 1px solid $pastel-orange;
+}
+
 @import "bootstrap";
