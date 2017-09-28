@@ -1,10 +1,10 @@
-  <nav class="navbar">
-    <div class="row-fluid header-row navbar-fixed-top">
-      <ul class="navbar-nav nav menu ">
-        <li class="nav-link"><%= link_to "About", static_pages_about_path %></li>
-        <li class="nav-link"><%= link_to "Events", events_path %></li>
-        <li class="nav-link"><%= link_to "Media", media_path %></li>
-        <li class="nav-link"><%= link_to "Blog", posts_path %></li>
+  <nav class="navbar header">
+    <div class="row navbar-fixed-top header-row ">
+      <ul class="navbar-nav nav header-menu menu">
+        <li class="nav-link menu-item"><%= link_to "About", static_pages_about_path %></li>
+        <li class="nav-link menu-item"><%= link_to "Events", events_path %></li>
+        <li class="nav-link menu-item"><%= link_to "Media", media_path %></li>
+        <li class="nav-link menu-item"><%= link_to "Blog", posts_path %></li>
 
         <% if user_signed_in? %>
           <% if current_user.admin %>
@@ -13,13 +13,13 @@
               Admin
             </button>
             <div class="dropdown-menu">
-              <%= link_to "Admin", edit_user_registration_path, class: "navlink userlink dropdown-item" %></li>
+              <%= link_to "Admin", edit_user_registration_path, class: "menu-item navlink userlink dropdown-item" %></li>
             </div>
           </div>
           <% else %>
-            <li class="nav-link"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
+            <li class="nav-link menu-item"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
           <% end %>
-          <li class="nav-link"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
+          <li class="nav-link menu-item"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
         <% end %>
         </ul>
       </div>
