@@ -86,7 +86,7 @@ $navbar-padding-x: 0;
       }
       .nav-link {
         font-size: 1em;
-        margin-right: 1em;  
+        margin-right: 1em;
       }
     }
 
@@ -185,5 +185,5 @@ a {
 }
 
 
-@import "bootstrap-sprockets";
+// @import "bootstrap-sprockets"; ###9/28### not needed with the newer bootstrap gem
 @import "bootstrap";
