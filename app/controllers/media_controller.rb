@@ -1,10 +1,6 @@
 class MediaController < ApplicationController
   before_action :set_medium, only: [:edit, :update, :destroy]
 
-  def index
-    redirect_to 'media#photo'
-  end
-
   def photo
     @media = Medium.photo
   end

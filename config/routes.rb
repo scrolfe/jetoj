@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'media/photo' => 'media#photo', as: :media_photo
   get 'media/video' => 'media#video', as: :media_video
   get 'media/audio' => 'media#audio', as: :media_audio
-  resources :media, except: [:show]
+  resources :media, except: [:index, :show]
 
   get 'admins/new_user' => 'admins#new_user', as: :admins_new_user
   post 'admins/create_user' => 'admins#create_user', as: :admins_create_user
