@@ -14,7 +14,7 @@
       <% @media.each do |medium| %>
         <% case medium.medium_type %>
         <% when "photo" %>
-          <%= image_tag medium.image.url, class: "img-responsive" %>
+          <%= image_tag medium.image.url, class: "img-fluid" %>
         <% when "video" %>
           <div class="embed-responsive embed-responsive-16by9">
             <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/#{medium.youtube_id}" %>" class="embed-responsive-item" allowfullscreen></iframe>
