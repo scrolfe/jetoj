@@ -1,11 +1,14 @@
-<div class="container-fluid">
-  <nav class="navbar">
-    <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "col-xs-12 col-sm-4 col-md-4 img-fluid navbar-brand") %>
-    <ul class="col-xs-12 col-sm-6 col-md-4 navbar-nav nav">
-      <li class="nav-link"><%= link_to "About", static_pages_about_path %></li>
-      <li class="nav-link"><%= link_to "Events", events_path %></li>
-      <li class="nav-link"><%= link_to "Media", media_photo_path %></li>
-      <li class="nav-link"><%= link_to "Blog", posts_path %></li>
+<nav class="navbar header-landing">
+  <div class="col-xs-12 col-sm-12 col-md-4">
+    <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "img-fluid navbar-brand header-brand") %>
+  </div>
+
+  <div class="col-xs-12 col-sm-6 col-md-5">
+    <ul class="nav header-landing-menu">
+      <li class="nav-link header-landing-menu-item"><%= link_to "About", static_pages_about_path %></li>
+      <li class="nav-link header-landing-menu-item"><%= link_to "Events", events_path %></li>
+      <li class="nav-link header-landing-menu-item"><%= link_to "Media", media_path %></li>
+      <li class="nav-link header-landing-menu-item"><%= link_to "Blog", posts_path %></li>
 
       <% if user_signed_in? %>
         <% if current_user.admin %>
@@ -22,6 +25,6 @@
         <% end %>
         <li class="nav-link"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
       <% end %>
-      </ul>
-    </nav>
+    </ul>
   </div>
+</nav>

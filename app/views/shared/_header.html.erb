@@ -1,0 +1,27 @@
+  <nav class="navbar header">
+    <div class="row header-row ">
+
+      <ul class="nav menu">
+        <li class="nav-link menu-item"><%= link_to "About", static_pages_about_path %></li>
+        <li class="nav-link menu-item"><%= link_to "Events", events_path %></li>
+        <li class="nav-link menu-item"><%= link_to "Media", media_path %></li>
+        <li class="nav-link menu-item"><%= link_to "Blog", posts_path %></li>
+
+        <% if user_signed_in? %>
+          <% if current_user.admin %>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Admin
+            </button>
+            <div class="dropdown-menu">
+              <%= link_to "Admin", edit_user_registration_path, class: "menu-item navlink userlink dropdown-item" %></li>
+            </div>
+          </div>
+          <% else %>
+            <li class="nav-link menu-item"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
+          <% end %>
+          <li class="nav-link menu-item"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
+        <% end %>
+        </ul>
+      </div>
+    </nav>

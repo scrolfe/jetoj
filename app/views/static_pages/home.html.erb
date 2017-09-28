@@ -1,14 +1,38 @@
 <div class="container">
   <%= render "layouts/header_landing" %>
 
-  <div class="row">
-    <h1 class="bold-headline">About Jetoj</h1>
-  </div>
-  <div class="row">
-    Jetoj focuses on bringing classical music to a broader audience. In today's world of media and a culture that gravitates toward mainstream music classical music is often tossed off as music for 'old people' or only elite audiences. Jetoj prides itself in the variety of music in each program.
-  <br /><br />
-    Jetoj works to make classical music accessible to everyone by exploring genre, concert model, presentation, audience engagement, location, repertoire, and instrumentation, through a collaborative group of musicians prepared to present music in an unconventional way.
-  </div>
+    <div class="row">
+      <div id="mission" class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 justify-content">
+        Jetoj is a music series that makes classical music accessible to all audiences, regardless of opportunity or privilege.
+        <br /><br />
+      </div>
+    </div>
 
-  <%= render 'layouts/members' %>
-</div>
+    <div class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#chicago" role="tab">Chicago</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#minneapolis" role="tab">Minneapolis</a>
+      </li>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="chicago" role="tabpanel">
+        Hello1
+      </div>
+      <div class="tab-pane" id="minneapolis" role="tabpanel">
+        Hello2
+      </div>
+    </div>
+
+
+<% #   <div class="row">
+    #  <div id="description" class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 justify-content">
+    #    Jetoj focuses on bringing classical music to a broader audience. In today's world of media and a culture that gravitates toward mainstream music classical music is often tossed off as music for 'old people' or only elite audiences. Jetoj prides itself in the variety of music in each program.
+    #    <br /><br />
+    #    Jetoj works to make classical music accessible to everyone by exploring genre, concert model, presentation, audience engagement, location, repertoire, and instrumentation, through a collaborative group of musicians prepared to present music in an unconventional way.
+    #  </div>
+    #</div>
+%>
+    <%= render 'layouts/members' %>
