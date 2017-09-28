@@ -11,7 +11,7 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 
 /* bootstrap defaults */
 
-$navbar-height: auto ;
+$navbar-height: auto;
 
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
@@ -49,9 +49,6 @@ $navbar-padding-x: 0;
     list-style: none;
     li {
       width: 25%;
-      a {
-
-      }
       .nav-link {
         font-size: 1em;
       }
@@ -86,7 +83,7 @@ $navbar-padding-x: 0;
       }
       .nav-link {
         font-size: 1em;
-        margin-right: 1em;  
+        margin-right: 1em;
       }
     }
 
@@ -122,6 +119,15 @@ a {
   padding: 0;
   max-width: 100%;
   height: auto;
+}
+
+#mission {
+  font-style: italic;
+  font-size: 2.75em;
+}
+
+#description {
+  font-size: 2.75em;
 }
 
 .menu {
