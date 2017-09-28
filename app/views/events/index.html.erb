@@ -1,21 +1,27 @@
-<%= render 'layouts/placeholder_nav' %>
-
-<div class="row" style="border: 1px solid black">
-  <div class="col-md-4">
-    <h4>Locations</h4>
-    <%= link_to "All", events_path %>
-    <%= link_to "Chicago", controller: "events", action: "index", branch: 1 %>
-    <%= link_to "Minneapolis", controller: "events", action: "index", branch: 2 %>
-  </div>
-  <div class="col-md-4">
-    <h4>Filter by Month</h4>
-    <a href="#">January</a>
-    <a href="#">February</a>
-    <a href="#">March</a>
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <%= image_tag "https://s3.us-east-2.amazonaws.com/jetoj/jetoj-events.png", alt: "jetoj events section", id: "jetoj-events" %>
   </div>
 </div>
-<div class="row" style="border: 1px dashed red">
-  <div class="col-md-8">
+
+<%= render 'layouts/placeholder_nav' %>
+
+<div class="row border-util">
+  <div class="col-md-8 border-util">
+
+    <div class="col-md-6 border-util">
+      <h4>Locations</h4>
+      <%= link_to "All", events_path %>
+      <%= link_to "Chicago", controller: "events", action: "index", branch: 1 %>
+      <%= link_to "Minneapolis", controller: "events", action: "index", branch: 2 %>
+    </div>
+    <div class="col-md-6 border-util">
+      <h4>Filter by Month</h4>
+      <a href="#">January</a>
+      <a href="#">February</a>
+      <a href="#">March</a>
+    </div>
+
     <% @events.each do |event| %>
       <%= link_to(event_path(event)) do %>
         <h2><%= event.name %></h2>
@@ -26,22 +32,28 @@
       <p><%= event.description %></p>
       <hr />
     <% end %>
+
   </div>
-  <div class="col-md-4" style="border-left: 1px solid orange">
-    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+
+  <div class="col-md-4 border-util">
+
+    <div class="events-sidebar text-center border-util">
       <h3>Featured Event</h3>
     </div>
-    <div class="featured-event">
-    <%= link_to(event_path(Event.find_by_id(3))) do %>
-      <h2><%= Event.find_by_id(3).name %></h2>
-      <%= image_tag Event.find_by_id(3).image.url, class: "img-responsive" %>
-    <% end %>
+
+    <div class="featured-event border-util">
+      <%= link_to(event_path(Event.find_by_id(3))) do %>
+        <h2><%= Event.find_by_id(3).name %></h2>
+        <%= image_tag Event.find_by_id(3).image.url, class: "img-responsive" %>
+      <% end %>
+      <p><%= Event.find_by_id(3).date_time.strftime("%B %d, %Y") %></p>
+      <p><%= Event.find_by_id(3).description %></p>
+
     </div>
 
-    <p><%= Event.find_by_id(3).date_time.strftime("%B %d, %Y") %></p>
-    <p><%= Event.find_by_id(3).description %></p>
     <hr />
-    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+
+    <div class="events-sidebar text-center border-util">
       <h2>Other important info</h2>
       <p>
         Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
@@ -49,7 +61,8 @@
       <p>Lorem ipsum abcdefg</p>
       <p>Lorem ipsum abcdefg</p>
     </div>
-    <div class="events-sidebar text-center" style="border-bottom: 3px solid black;">
+
+    <div class="events-sidebar text-center border-util">
       <h2>Other important info</h2>
       <p>
         Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
@@ -57,5 +70,6 @@
       <p>Lorem ipsum abcdefg</p>
       <p>Lorem ipsum abcdefg</p>
     </div>
+
   </div>
 </div>
