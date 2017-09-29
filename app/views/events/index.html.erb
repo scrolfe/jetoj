@@ -28,7 +28,7 @@
     <% @events.each do |event| %>
       <%= link_to(event_path(event)) do %>
         <h2><%= event.name %></h2>
-        <%= image_tag event.image.url, class: "img-fluid" %>
+        <%= image_tag event.image, class: "img-fluid" %>
       <% end %>
 
       <p><%= event.date_time.strftime("%B %d, %Y") %></p>
