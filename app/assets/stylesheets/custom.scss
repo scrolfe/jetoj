@@ -237,4 +237,8 @@ $link-color: black;
   border: 1px solid $pastel-orange;
 }
 
+.performer-profile-row {
+  max-height: 30vh;
+}
+
 @import "bootstrap";
