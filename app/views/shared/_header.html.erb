@@ -6,7 +6,14 @@
         <li class="nav-link menu-item"><%= link_to "Events", events_path %></li>
         <li class="nav-link menu-item"><%= link_to "Media", media_photo_path %></li>
         <li class="nav-link menu-item"><%= link_to "Blog", posts_path %></li>
-        <li class="nav-link menu-item"><%= link_to "Performers", performers_path %></li>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Performers
+          </button>
+          <div class="dropdown-menu">
+            <%= link_to "Performers", performers_path, class: "menu-item navlink userlink dropdown-item" %>
+          </div>
+        </div>
 
         <% if user_signed_in? %>
           <% if current_user.admin %>
@@ -15,7 +22,7 @@
               Admin
             </button>
             <div class="dropdown-menu">
-              <%= link_to "Admin", edit_user_registration_path, class: "menu-item navlink userlink dropdown-item" %></li>
+              <%= link_to "Admin", edit_user_registration_path, class: "menu-item navlink userlink dropdown-item" %>
             </div>
           </div>
           <% else %>
