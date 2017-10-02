@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   resources :events
   resources :posts
-  resources :performers
+
+  get 'performers/chicago' => 'performers#chicago', as: :performers_chicago
+  get 'performers/minneapolis' => 'performers#minneapolis', as: :performers_minneapolis
+  resources :performers, except: [:index]
 
   get 'media/photo' => 'media#photo', as: :media_photo
   get 'media/video' => 'media#video', as: :media_video
