@@ -1,11 +1,16 @@
 <%= render 'filters' %>
 
-<div class="row">
-  <% @media.each do |medium| %>
+<% @media.each do |medium| %>
+  <div class="row border-util">
     <div class="col-sm-6">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/#{medium.youtube_id}" %>" class="embed-responsive-item" allowfullscreen></iframe>
+      <div class="embed-responsive embed-responsive-16by9 border-util">
+        <%= youtube_frame("http://www.youtube.com/embed/#{medium.youtube_id}") %>
       </div>
     </div>
-  <% end %>
-</div>
+    <div class="col-sm-6">
+      <%= medium.description %>
+    </div>
+  </div>
+  <br />
+  <br />
+<% end %>

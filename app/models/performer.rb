@@ -11,4 +11,12 @@ class Performer < ApplicationRecord
   def name
     [first_name, last_name].join(" ")
   end
+
+  def self.chicago
+    where(branch: "Chicago")
+  end
+
+  def self.minneapolis
+    where(branch: "Minneapolis")
+  end
 end
