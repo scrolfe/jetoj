@@ -19,16 +19,14 @@
 
 <% #tab content %>
   <div class="tab-content">
+
+    <% # Chicago Tab %>
     <div class="tab-pane active" id="chicago" role="tabpanel">
       <div class="row d-flex justify-content-center">
         <div id="carouselExampleControls" class="carousel slide home-carousel" data-ride="carousel">
           <div class="carousel-inner" role="listbox">
             <% @chicago_performers.each_with_index do |performer, index| %>
-              <% if index == 0 %>
-                <div class="carousel-item active"><%= image_tag performer.headshot, class: "img-fluid" %></div>
-              <% else %>
-                <div class="carousel-item"></div>
-              <% end %>
+              <%= render 'performers/profile', performer: performer, index: index %>
             <% end %>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -42,16 +40,14 @@
         </div>
       </div>
     </div>
+
+    <% # Minneapolis Tab %>
     <div class="tab-pane" id="minneapolis" role="tabpanel">
       <div class="row d-flex justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide home-carousel" data-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide home-carousel" data-ride="carousel" data-interval=2000>
           <div class="carousel-inner" role="listbox">
             <% @minneapolis_performers.each_with_index do |performer, index| %>
-              <% if index == 0 %>
-                <div class="carousel-item active"><%= image_tag performer.headshot, class: "img-fluid" %></div>
-              <% else %>
-                <div class="carousel-item"></div>
-              <% end %>
+              <%= render 'performers/profile', performer: performer, index: index %>
             <% end %>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
