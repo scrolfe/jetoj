@@ -138,6 +138,17 @@ $link-color: black;
 
 }
 
+.region-menu {
+  
+}
+.region-menu-tabs {
+
+}
+
+.home-carousel {
+  width: 800px;
+}
+
 #jetoj-logo {
   max-width:780px;
   max-height:520px;
@@ -147,6 +158,7 @@ $link-color: black;
 #mission {
   font-style: italic;
   font-size: 1.75rem;
+  margin: 2em 0 2em 0;
 }
 
 #description {
@@ -163,12 +175,7 @@ $link-color: black;
   }
 }
 
-.header-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: white;
-}
+
 
 .menu {
   font-size: 1.5em;
