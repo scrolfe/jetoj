@@ -1,15 +1,17 @@
-<% if index == 0 %>
-  <div class="carousel-item car-item active">
-<% else %>
-  <div class="carousel-item car-item">
-<% end %>
-  <div class="row">
-    <div class="col-md-6">
-      <%= image_tag performer.headshot, class: "img-fluid" %>
-    </div>
-    <div class="col-md-6">
-      <%= performer.name %>
-      <%= performer.bio %>
+<div class="row">
+  <% if index == 0 %>
+    <div class="carousel-item car-item active">
+  <% else %>
+    <div class="carousel-item car-item">
+  <% end %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= image_tag performer.headshot.url, class: "img-fluid"%>
+      </div>
+      <div class="col-md-4">
+        <h3><%= performer.name %></h3>
+        <p><%= performer.bio %></p>
+      </div>
     </div>
   </div>
 </div>
