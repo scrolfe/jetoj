@@ -1,7 +1,10 @@
+<div class="row header-row border-util">
   <nav class="navbar header">
-    <div class="row header-row ">
-
-      <ul class="nav menu">
+    <div class="col-xs-12 col-sm-12 col-md-2">
+      <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "img-fluid navbar-brand header-brand") %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-10">
+      <ul class="nav menu d-flex align-items-center">
         <li class="nav-link menu-item"><%= link_to "About", static_pages_about_path %></li>
         <li class="nav-link menu-item"><%= link_to "Events", events_path %></li>
         <li class="nav-link menu-item"><%= link_to "Media", media_photo_path %></li>
@@ -24,4 +27,6 @@
         <% end %>
         </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
+</div>
