@@ -7,6 +7,12 @@
     </div>
   </div>
 
+<div class="row d-flex flex-column featured-event">
+  <h1><%= @featured_event.name %></h1>
+  <%= image_tag @featured_event.image %>
+  <%= @featured_event.description %>
+</div>
+
 <% #tabs %>
   <div class="nav nav-tabs region-menu region-menu-tabs">
     <li class="nav-item">
@@ -44,7 +50,7 @@
     <% # Minneapolis Tab %>
     <div class="tab-pane" id="minneapolis" role="tabpanel">
       <div class="row d-flex justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide home-carousel" data-ride="carousel" data-interval=2000>
+        <div id="carouselExampleControls2" class="carousel slide home-carousel" data-ride="carousel" data-interval=2000>
           <div class="carousel-inner" role="listbox">
             <% @minneapolis_performers.each_with_index do |performer, index| %>
               <%= render 'performers/profile', performer: performer, index: index %>

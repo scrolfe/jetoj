@@ -7,6 +7,7 @@ class StaticPagesController < ApplicationController
   def home
     @chicago_performers = Performer.chicago
     @minneapolis_performers = Performer.minneapolis
+    @featured_event = Event.first
   end
 
   def about

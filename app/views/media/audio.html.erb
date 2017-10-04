@@ -1,11 +1,10 @@
 <%= render 'filters' %>
-
-<div class="row">
-  <div class="ml-auto mr-auto">
+<div class="row d-flex flex-column justify-content-center">
+  <div class="col-md-4">
     <% @media.each do |medium| %>
-      <div class="col-sm-12">
-        <%= audio_tag medium.audio.url, controls: true %>
-      </div>
+      <h2><%= medium.audio_file_name %></h2>
+      <%= audio_tag medium.audio.url, controls: true %>
+      <p><%= medium.description %></p>
     <% end %>
   </div>
 </div>
