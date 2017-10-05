@@ -1,1 +1,1 @@
-$(document).ready(() => console.log("READY") )
+$(document).ready(()=> console.log(moment().format('dddd')))
