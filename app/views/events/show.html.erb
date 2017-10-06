@@ -4,8 +4,6 @@
   </div>
 </div>
 
-<%= render 'layouts/placeholder_nav' %>
-
 <div class="row">
   <div class="col-md-8 border-util">
 
@@ -44,6 +42,25 @@
       </div>
     </div>
   </div>
+
+    <div class="row">
+      <div id="map"></div>
+          <script>
+            function initMap() {
+              var uluru = {lat: -25.363, lng: 131.044};
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+              });
+              var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+              });
+            }
+          </script>
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdm9VYfo9iyXB0KQUjfKx0HHWzzHA_1kA&callback=initMap">
+          </script>
 
   <div class="col-md-4 border-util">
     <div class="events-sidebar text-center border-util">

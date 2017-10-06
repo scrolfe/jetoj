@@ -16,6 +16,11 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
+#map {
+ height: 400px;
+ width: 100%;
+}
+
 @media (max-width: 767px) {
   .header {
     position: relative;
