@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:edit, :update, :destroy]
 
+  def calendar
+  end
+
   def index
     if params[:branch].present?
       @events = Event.where("DATE(date_time) >= DATE(?)", DateTime.now).branch(params[:branch]).order('date_time ASC')
@@ -46,7 +49,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :date_time, :image, address: [:street_address, :city, :state, :zip, :branch])
+    params.require(:event).permit(:branch, :name, :description, :date_time, :image, address: [:street_address, :city, :state, :zip, :branch])
   end
 
   def set_event

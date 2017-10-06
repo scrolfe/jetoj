@@ -17,6 +17,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container">
+
+
+      <%= content_tag "div", id: "calendar" do %>
+      <% end %>
+
+
       <%= yield %>
       <%= render 'shared/footer' %>
     </div>

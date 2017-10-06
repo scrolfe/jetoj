@@ -17,12 +17,5 @@
 //= require turbolinks
 //= require moment
 //= require fullcalendar
+//= require calendar
 //= require_tree .
-
-$(document).ready(function() {
-    $('#calendar').fullCalendar({
-        defaultDate: '2014-09-12',
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
-    });
-});
