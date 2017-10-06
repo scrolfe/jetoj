@@ -2,6 +2,26 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:edit, :update, :destroy]
 
   def calendar
+    # event = Event.first
+    # title = event.name
+    # start_time = event.date_time.strftime("%Y-%m-%d")
+    # end_time = event.date_time.advance(days: 1).strftime("%Y-%m-%d")
+
+    cal_data = Event.all.map { |e| {title: e.name, start: e.date_time.strftime("%Y-%m-%dT%H:%M:00"), end: e.date_time.strftime("%Y-%m-%dT%H:%M:00")} }.to_json
+
+    respond_to do |format|
+      format.json do
+        # render json: {
+          # data: {
+          #   title: "#{title}",
+          #   start: "#{start_time}",
+          #   end: "#{end_time}"
+          # }
+          # }
+
+        render json: { data: "#{cal_data}" }
+      end
+    end
   end
 
   def index

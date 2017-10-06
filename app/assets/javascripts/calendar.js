@@ -1,21 +1,37 @@
 $(document).ready(() => {
-  $('#calendar').fullCalendar({
-    header: {
-      left: 'prev, next, today',
-      center: 'title',
-      right: 'month, agendaWeek'
-    },
-    selectable: true,
-    selectHelper: true,
-    events: [
-      {
-        title: "Test Title",
-        start: "2017-10-07",
-        end: "2017-10-08"
-      }
-    ],
-    defaultDate: moment(),
-    editable: true,
-    eventLimit: true, // allow "more" link when too many events
-  });
+  $.ajax({
+    url: "/events/calendar",
+    cache: false,
+    success: function(response) {
+      console.log(response);
+      let calData = JSON.parse(response.data);
+      console.log(calData);
+
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev, next, today',
+          center: 'title',
+          right: 'month, agendaWeek'
+        },
+        selectable: true,
+        selectHelper: true,
+        events: calData,
+
+        // events: [
+        //   {
+        //     title: response.data['title'],
+        //     start: response.data['start'],
+        //     end: response.data['end']
+        //   }
+        // ],
+        defaultDate: "2018-10-01",
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+      });
+
+
+    }
+  })
+
+
 })
