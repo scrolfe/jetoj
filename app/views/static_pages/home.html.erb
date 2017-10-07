@@ -7,50 +7,41 @@
     </div>
   </div>
 
-<% #tabs %>
-  <div class="nav nav-tabs region-menu region-menu-tabs">
+
+
+
+
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#chicago" role="tab">Chicago</a>
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">Chicago</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#minneapolis" role="tab">Minneapolis</a>
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Minneapolis</a>
     </li>
-  </div>
-
-<% #tab content %>
-  <div class="tab-content">
-
-    <% # Chicago Tab %>
-    <div class="tab-pane active" id="chicago" role="tabpanel">
-      <div class="row d-flex justify-content-center">
-        <% performer = @chicago_performers.first %>
-        <%= render 'performers/profile', performer: performer, index: 0 %>
-      </div>
-    </div>
-
-    <% # Minneapolis Tab %>
-    <div class="tab-pane" id="minneapolis" role="tabpanel">
-      <div class="row d-flex justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide home-carousel" data-ride="carousel" data-interval=2000>
-          <div class="carousel-inner" role="listbox">
-            <% @minneapolis_performers.each_with_index do |performer, index| %>
-              <%= render 'performers/profile', performer: performer, index: index %>
-            <% end %>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="carouselContainer">
+        <% @chicago_performers.each do |performer| %>
+          <div class="chicagoPerformers", style="display: none">
+            <%= image_tag performer.headshot.url(:thumb), class: "performersCarouselImage" %>
+            <%= performer.name %>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-          </a>
-        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="carouselContainer">
+        <% @minneapolis_performers.each do |performer| %>
+          <div class="minneapolisPerformers", style="display: none">
+            <%= image_tag performer.headshot.url(:thumb), class: "performersCarouselImage" %>
+            <%= performer.name %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-
 
 <%
 =begin
@@ -87,3 +78,38 @@ $('.chicagoPerformers')
 
 =end
 %>
+
+
+<script>
+  let slidesChicago = $(".chicagoPerformers");
+  $(slidesChicago[0]).css("display", "block");
+  let slideCountChicago = slidesChicago.length;
+  let slideIndexChicago = 1;
+
+  setInterval(() => {
+    let activeIndex = slideIndexChicago % slideCountChicago;
+    for (i = 0; i < slidesChicago.length; i++) {
+      $(slidesChicago[i]).css("display", "none");
+    }
+    $(slidesChicago[activeIndex]).css("display", "block");
+    slideIndexChicago++;
+  }, 3000);
+
+  let slidesMinneapolis = $(".minneapolisPerformers");
+  $(slidesMinneapolis[0]).css("display", "block");
+  let slideCountMinneapolis = slidesMinneapolis.length;
+  let slideIndexMinneapolis = 1;
+
+  setInterval(() => {
+    let activeIndex = slideIndexMinneapolis % slideCountMinneapolis;
+    for (i = 0; i < slidesMinneapolis.length; i++) {
+      $(slidesMinneapolis[i]).css("display", "none");
+    }
+    $(slidesMinneapolis[activeIndex]).css("display", "block");
+    slideIndexMinneapolis++;
+  }, 3000);
+</script>
+
+<style>
+
+</style>
