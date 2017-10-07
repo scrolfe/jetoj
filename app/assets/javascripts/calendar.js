@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).on('turbolinks:load', () => {
   $.ajax({
     url: "/events/calendar",
     cache: false,
@@ -11,7 +11,7 @@ $(document).ready(() => {
         header: {
           left: 'prev, next, today',
           center: 'title',
-          right: 'month, agendaWeek'
+          right: 'month, agendaWeek, listYear'
         },
         selectable: true,
         selectHelper: true,
