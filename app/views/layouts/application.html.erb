@@ -8,8 +8,6 @@
     <script src="https://use.fontawesome.com/4653dc14c3.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.1/fullcalendar.css' rel='stylesheet' />
-    <%= javascript_include_tag 'fullcalendar' %>
   </head>
 
   <body>
@@ -17,12 +15,6 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container">
-
-
-      <%= content_tag "div", id: "calendar" do %>
-      <% end %>
-
-
       <%= yield %>
       <%= render 'shared/footer' %>
     </div>

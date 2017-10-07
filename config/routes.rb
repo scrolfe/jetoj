@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     put 'users' => 'devise/registrations#update', :as => 'user_registration'
   end
 
-  get 'events/calendar' => 'events#calendar', as: :events_calendar
   resources :events
   resources :posts
 
