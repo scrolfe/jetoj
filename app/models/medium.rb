@@ -9,22 +9,22 @@ class Medium < ApplicationRecord
 
   validates_presence_of :medium_type
 
-  with_options if: :is_type_photo? do |medium|
+  with_options if: :photo? do |medium|
     medium.validates :image_file_name, presence: true
     medium.validates :audio_file_name, :youtube_id, absence: true
   end
 
-  with_options if: :is_type_video? do |medium|
+  with_options if: :video? do |medium|
     medium.validates :youtube_id, presence: true
     medium.validates :image_file_name, :audio_file_name, absence: true
   end
 
-  with_options if: :is_type_audio? do |medium|
+  with_options if: :audio? do |medium|
     medium.validates :audio_file_name, presence: true
     medium.validates :image_file_name, :youtube_id, absence: true
   end
 
-  enum medium_type: {"photo":1, "video":2, "audio":3}
+  enum medium_type: {"photo": 0, "video": 1, "audio": 2}
 
   def is_type_photo?
     medium_type == "photo"
@@ -37,8 +37,4 @@ class Medium < ApplicationRecord
   def is_type_audio?
     medium_type == "audio"
   end
-
-  scope :photo, -> { where medium_type: "photo" }
-  scope :video, -> { where medium_type: "video" }
-  scope :audio, -> { where medium_type: "audio" }
 end

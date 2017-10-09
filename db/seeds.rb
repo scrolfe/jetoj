@@ -44,12 +44,12 @@ end
 # Media
 7.times do
   description = Faker::Lorem.sentence
-  type_selector = rand(3) + 1
+  type_selector = rand(3)
   image_file = File.new("#{Rails.root}/app/assets/images/seed_assets/media_images/medium_image.jpg")
   audio_file = File.new("#{Rails.root}/app/assets/audio/seed_assets/audio/wave.mp3")
 
   case type_selector
-  when 1
+  when 0
     Medium.create(
       user: User.first,
       medium_type: type_selector,
@@ -58,7 +58,7 @@ end
       audio: nil,
       description: description,
     )
-  when 2
+  when 1
     Medium.create(
       user: User.first,
       medium_type: type_selector,
@@ -67,7 +67,7 @@ end
       audio: nil,
       description: description,
     )
-  when 3
+  when 2
     Medium.create(
       user: User.first,
       medium_type: type_selector,

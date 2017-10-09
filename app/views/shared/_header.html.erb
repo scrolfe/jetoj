@@ -5,37 +5,85 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-10">
       <ul class="nav menu d-flex align-items-center">
-        <li class="nav-link menu-item"><%= link_to "About", static_pages_about_path %></li>
-        <li class="nav-link menu-item"><%= link_to "Events", events_path %></li>
-        <li class="nav-link menu-item"><%= link_to "Media", media_photo_path %></li>
-        <li class="nav-link menu-item"><%= link_to "Blog", posts_path %></li>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        <% if user_signed_in? %>
+          <li class="nav-link menu-item"><%= link_to "About", static_pages_about_path %></li>
+
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Events
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to "Chicago", "/events?branch=1", class: "menu-item navlink userlink dropdown-item" %>
+              <%= link_to "Minneapolis", "/events?branch=2", class: "menu-item navlink userlink dropdown-item" %>
+              <%= link_to "New Event", new_event_path, class: "menu-item navlink userlink dropdown-item" %>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Media
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to "Media", media_photo_path, class: "menu-item navlink userlink dropdown-item" %>
+              <%= link_to "Add Media", new_medium_path, class: "menu-item navlink userlink dropdown-item" %>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Blog
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to "Blog", posts_path, class: "menu-item navlink userlink dropdown-item" %>
+              <%= link_to "New Post", new_post_path, class: "menu-item navlink userlink dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-link menu-item"><%= link_to "About", static_pages_about_path %></li>
+
+          <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Events
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+             <%= link_to "Chicago", "/events?branch=1", class: "menu-item navlink userlink dropdown-item" %>
+             <%= link_to "Minneapolis", "/events?branch=2", class: "menu-item navlink userlink dropdown-item" %>
+           </div>
+         </li>
+
+          <li class="nav-link menu-item"><%= link_to "Media", media_photo_path %></li>
+          <li class="nav-link menu-item"><%= link_to "Blog", posts_path %></li>
+        <% end %>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Performers
-          </button>
-          <div class="dropdown-menu">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to "Chicago", performers_chicago_path, class: "menu-item navlink userlink dropdown-item" %>
             <%= link_to "Minneapolis", performers_minneapolis_path, class: "menu-item navlink userlink dropdown-item" %>
+            <% if user_signed_in? %><%= link_to "Add Performer", new_performer_path, class: "menu-item navlink userlink dropdown-item" %><% end %>
           </div>
-        </div>
+        </li>
 
         <% if user_signed_in? %>
           <% if current_user.admin %>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Admin
-            </button>
-            <div class="dropdown-menu">
-              <%= link_to "Admin", edit_user_registration_path, class: "menu-item navlink userlink dropdown-item" %>
-            </div>
-          </div>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to "Admin", edit_user_registration_path, class: "menu-item navlink userlink dropdown-item" %>
+                <%= link_to "Logout", destroy_user_session_path, class: "menu-item navlink userlink dropdown-item", method: :delete %>
+              </div>
+            </li>
           <% else %>
             <li class="nav-link menu-item"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
+            <li class="nav-link menu-item"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
           <% end %>
-          <li class="nav-link menu-item"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
         <% end %>
-        </ul>
-      </div>
+      </ul>
     </div>
   </nav>
 </div>
