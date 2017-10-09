@@ -7,64 +7,37 @@
     </div>
   </div>
 
-<div class="row d-flex flex-column featured-event">
-  <h1><%= @featured_event.name %></h1>
-  <%= image_tag @featured_event.image %>
-  <%= @featured_event.description %>
-</div>
-
-<% #tabs %>
-  <div class="nav nav-tabs region-menu region-menu-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#chicago" role="tab">Chicago</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#minneapolis" role="tab">Minneapolis</a>
-    </li>
+  <div class="row d-flex flex-column featured-event">
+    <h1><%= @featured_event.name %></h1>
+    <%= image_tag @featured_event.image %>
+    <%= @featured_event.description %>
   </div>
 
-<% #tab content %>
-  <div class="tab-content">
-
-    <% # Chicago Tab %>
-    <div class="tab-pane active" id="chicago" role="tabpanel">
-      <div class="row d-flex justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide home-carousel" data-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-            <% @chicago_performers.each_with_index do |performer, index| %>
-              <%= render 'performers/profile', performer: performer, index: index %>
-            <% end %>
+  <ul class="nav nav-tabs" id="performerTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="chicago-tab" data-toggle="tab" href="#chicago" role="tab" aria-controls="chicago" aria-expanded="true">Chicago</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="minneapolis-tab" data-toggle="tab" href="#minneapolis" role="tab" aria-controls="minneapolis">Minneapolis</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="performerTabContent">
+    <div class="tab-pane show active" id="chicago" role="tabpanel" aria-labelledby="chicago-tab">
+      <div class="carouselContainer">
+        <% @chicago_performers.each do |performer| %>
+          <div class="performersCarousel chicagoPerformers">
+            <%= render 'performers/profile', performer: performer %>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-          </a>
-        </div>
+        <% end %>
       </div>
     </div>
-
-    <% # Minneapolis Tab %>
-    <div class="tab-pane" id="minneapolis" role="tabpanel">
-      <div class="row d-flex justify-content-center">
-        <div id="carouselExampleControls2" class="carousel slide home-carousel" data-ride="carousel" data-interval=2000>
-          <div class="carousel-inner" role="listbox">
-            <% @minneapolis_performers.each_with_index do |performer, index| %>
-              <%= render 'performers/profile', performer: performer, index: index %>
-            <% end %>
+    <div class="tab-pane" id="minneapolis" role="tabpanel" aria-labelledby="minneapolis-tab">
+      <div class="carouselContainer">
+        <% @minneapolis_performers.each do |performer| %>
+          <div class="performersCarousel minneapolisPerformers">
+            <%= render 'performers/profile', performer: performer %>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-          </a>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

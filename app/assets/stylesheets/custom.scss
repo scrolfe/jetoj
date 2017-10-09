@@ -242,7 +242,13 @@ $link-color: black;
   }
 }
 
-/* footer */
+/* utilities */
+
+.border-util {
+  border: 1px solid $pastel-orange;
+}
+
+/* These need to be better organized */
 
 .footer {
   a.fa {
@@ -253,14 +259,9 @@ $link-color: black;
   }
 }
 
-/* utilities */
-
-.border-util {
-  // border: 1px solid $pastel-orange;
+.performersCarousel {
+  display: none;
 }
 
-.performer-profile-row {
-  max-height: 30vh;
-}
 
 @import "bootstrap";

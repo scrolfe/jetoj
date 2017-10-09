@@ -1,34 +1,58 @@
-<%= render 'layouts/placeholder_nav' %>
+<div class="row border-util">
+  <div class="col-md-6 mr-auto ml-auto text-center">
 
-<p><%= image_tag @event.image.url %></p>
+    <%= image_tag @event.image.url, class: "img-fluid" %>
 
-<%= form_for @event do |f| %>
-  <% Event.branches.each_key do |branch| %>
-    <%= f.label branch %>
-    <%= f.radio_button :branch, branch %><br />
-  <% end %>
+    <%= form_for @event do |f| %>
+      <div class="form-check">
+        <% Event.branches.each_key do |branch| %>
+        <%= f.label branch, class: "form-check-label" %>
+        <%= f.radio_button :branch, branch, class: "form-check-input" %>
+        <% end %>
+      </div>
 
-  <%= f.label :name %><br />
-  <%= f.text_field :name %><br />
-  <%= f.label :image %><br />
-  <%= f.file_field :image %><br />
-  <%= f.label :description %><br />
-  <%= f.text_area :description %><br />
-  <%= f.label :date_time %><br />
-  <%= f.datetime_select :date_time, {prompt: true, ampm: true}%><br />
-  <%= f.fields_for :address do |a| %>
-    <%= a.label :street_address %>
-    <%= a.text_field :street_address %>
-    <%= a.label :city %>
-    <%= a.text_field :city %>
-    <%= a.label :state %>
-    <%= a.text_field :state %>
-    <%= a.label :zip %>
-    <%= a.number_field :zip %>
-  <% end %>
-  <%= f.submit 'Update Event' %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :image %>
+        <%= f.file_field :image, class: "form-control-file mr-auto ml-auto" %>
+      </div>
 
-<%= form_for @event, method: :delete do |f| %>
-  <%= f.submit 'Delete' %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+
+      <%= f.label :date_time, "Date / Start Time", class: "form-control-label" %>
+      <div class="form-inline">
+        <%= f.datetime_select :date_time, {prompt: true, ampm: true}, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.fields_for :address do |a| %>
+          <%= a.label :street_address %>
+          <%= a.text_field :street_address, class: "form-control" %>
+          <%= a.label :city %>
+          <%= a.text_field :city, class: "form-control" %>
+          <%= a.label :state %>
+          <%= a.text_field :state, class: "form-control" %>
+          <%= a.label :zip %>
+          <%= a.number_field :zip, class: "form-control" %>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit 'Update Event', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form_for @event, method: :delete do |f| %>
+      <%= f.submit 'Delete', class: "btn btn-warning" %>
+      <% end %>
+    </div>
+  </div>
+</div>
