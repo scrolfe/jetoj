@@ -13,9 +13,6 @@ class MediaController < ApplicationController
     @media = Medium.audio
   end
 
-  def show
-  end
-
   def new
     @medium = Medium.new
   end
