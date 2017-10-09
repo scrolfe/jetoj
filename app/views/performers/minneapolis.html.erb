@@ -2,7 +2,7 @@
 <span><%= link_to "Minneapolis", controller: "performers", action: "minneapolis" %></span>
 
 <% @performers.each do |performer| %>
-  <div class="row performer-profile-row">
+  <div class="row">
     <div class="col-md-6">
       <%= image_tag performer.headshot.url, class: "img-fluid", style: "height: 30vh"%>
     </div>

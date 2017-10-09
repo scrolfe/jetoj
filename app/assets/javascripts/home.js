@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).on('turbolinks:load', () => {
   // carousel for chicago
   let slidesChicago = $(".chicagoPerformers");
   let slideCountChicago = slidesChicago.length;
