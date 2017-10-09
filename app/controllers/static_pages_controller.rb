@@ -8,7 +8,4 @@ class StaticPagesController < ApplicationController
     @chicago_performers = Performer.chicago
     @minneapolis_performers = Performer.minneapolis
   end
-
-  def about
-  end
 end
