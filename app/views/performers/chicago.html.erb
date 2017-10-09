@@ -4,7 +4,7 @@
 <% @performers.each do |performer| %>
   <div class="row">
     <div class="col-md-6">
-      <%= image_tag performer.headshot.url, class: "img-fluid", style: "height: 30vh" %>
+      <%= image_tag performer.headshot.url, class: "img-fluid" %>
     </div>
     <div class="col-md-6">
       <h3><b><%= performer.name %></b></h3>

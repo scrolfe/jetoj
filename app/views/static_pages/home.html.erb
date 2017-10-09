@@ -19,7 +19,7 @@
     <div class="tab-pane show active" id="chicago" role="tabpanel" aria-labelledby="chicago-tab">
       <div class="carouselContainer">
         <% @chicago_performers.each do |performer| %>
-          <div class="chicagoPerformers", style="display: none">
+          <div class="performersCarousel chicagoPerformers">
             <%= render 'performers/profile', performer: performer %>
           </div>
         <% end %>
@@ -28,7 +28,7 @@
     <div class="tab-pane" id="minneapolis" role="tabpanel" aria-labelledby="minneapolis-tab">
       <div class="carouselContainer">
         <% @minneapolis_performers.each do |performer| %>
-          <div class="minneapolisPerformers", style="display: none">
+          <div class="performersCarousel minneapolisPerformers">
             <%= render 'performers/profile', performer: performer %>
           </div>
         <% end %>
