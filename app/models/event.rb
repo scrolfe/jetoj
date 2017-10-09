@@ -1,3 +1,5 @@
+require 'google_maps_service'
+
 class Event < ApplicationRecord
   belongs_to :user
 
@@ -8,4 +10,13 @@ class Event < ApplicationRecord
 
   enum branch: {"Chicago":1, "Minneapolis":2}
   scope :branch, -> (branch) { where branch: branch }
+
+  def self.set_coords(event)
+    gmaps = GoogleMapsService::Client.new(key: 'YOUR KEY')
+    results = gmaps.geocode("#{event.address['street']}, #{event.address['city']}, #{event.address['state']}")
+    {lat: results[0][:geometry][:location][:lat], lng: results[0][:geometry][:location][:lng]}
+  end
 end
+
+
+#{@event.address['street_address']}, #{@event.address['city']}, #{@event.address['state']}
