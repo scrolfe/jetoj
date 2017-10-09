@@ -1,18 +1,36 @@
-<h1>Performers#new</h1>
+<div class="row border-util">
+  <div class="col-md-6 mr-auto ml-auto text-center">
+    <%= form_for @performer do |f| %>
+      <div class="form-group">
+        <% Performer.branches.each_key do |branch| %>
+          <%= f.label branch, class: "form-check-label" %>
+          <%= f.radio_button :branch, branch, class: "form-check-input" %>
+        <% end %>
+      </div>
 
-<%= form_for @performer do |f| %>
-  <% Performer.branches.each_key do |branch| %>
-    <%= f.label branch %>
-    <%= f.radio_button :branch, branch %><br />
-  <% end %>
+      <div class="form-group">
+        <%= f.label :headshot %>
+        <%= f.file_field :headshot, class: "form-control file mr-auto ml-auto" %>
+      </div>
 
-  <%= f.label :headshot %><br />
-  <%= f.file_field :headshot %><br />
-  <%= f.label :first_name %><br />
-  <%= f.text_field :first_name %><br />
-  <%= f.label :last_name %><br />
-  <%= f.text_field :last_name %><br />
-  <%= f.label :bio %><br />
-  <%= f.text_area :bio %><br />
-  <%= f.submit 'Create' %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :bio %>
+        <%= f.text_area :bio, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit 'Create', class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>
