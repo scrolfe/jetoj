@@ -23,7 +23,7 @@ class MediaController < ApplicationController
   def create
     @medium = current_user.media.new(medium_params)
     if @medium.save
-      redirect_to @medium
+      redirect_to "/media/#{@medium.medium_type}"
     else
       render :new
     end
