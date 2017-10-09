@@ -43,8 +43,8 @@
     </div>
   </div>
 
-  <% gmaps = GoogleMapsService::Client.new(key: 'YOUR_API_KEY') %>
-  <% results = gmaps.geocode("#{@event.address['street_address']}, #{@event.address['city']}, #{@event.address['state']}, #{@event.address['zip']}") %>
+  <% gmaps = GoogleMapsService::Client.new(key: 'AIzaSyD5oCFsiuCkN1xIVZvzKKw4F10cBMTpfwU') %>
+  <% results = gmaps.geocode([@event.address['street_address'], @event.address['city']].join(", ")) #{@event.address['city']}, #{@event.address['state']}, #{@event.address['zip']}") %>
 
     <div class="row">
       <div id="map"></div>
@@ -62,7 +62,7 @@
         }
       </script>
       <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5oCFsiuCkN1xIVZvzKKw4F10cBMTpfwU&callback=initMap">
       </script>
 
   <div class="col-md-4 border-util">
