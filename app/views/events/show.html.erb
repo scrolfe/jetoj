@@ -43,24 +43,27 @@
     </div>
   </div>
 
+  <% gmaps = GoogleMapsService::Client.new(key: 'YOUR_API_KEY') %>
+  <% results = gmaps.geocode("#{@event.address['street_address']}, #{@event.address['city']}, #{@event.address['state']}, #{@event.address['zip']}") %>
+
     <div class="row">
       <div id="map"></div>
-          <script>
-            function initMap() {
-              var uluru = {lat: -25.363, lng: 131.044};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: uluru
-              });
-              var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-              });
-            }
-          </script>
-          <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdm9VYfo9iyXB0KQUjfKx0HHWzzHA_1kA&callback=initMap">
-          </script>
+      <script>
+        function initMap() {
+          var eventLocation = {lat: '<%= results.geometry.location.lat %>', lng: '<%= results.geometry.location.lng %>' };
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: eventLocation
+          });
+          var marker = new google.maps.Marker({
+            position: eventLocation,
+            map: map
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+      </script>
 
   <div class="col-md-4 border-util">
     <div class="events-sidebar text-center border-util">
