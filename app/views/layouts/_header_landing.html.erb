@@ -1,11 +1,12 @@
 <nav class="navbar header-landing">
   <div class="row d-flex align-items-end">
+
   <div class="col-xs-12 col-sm-12 col-md-4">
     <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "img-fluid navbar-brand header-brand") %>
   </div>
 
-  <div class="col-xs-12 col-sm-6 col-md-5">
-    <ul class="nav header-landing-menu">
+  <div class="col-xs-12 col-sm-12 col-md-5">
+    <ul class="nav header-landing-menu justify-content-around">
       <li class="nav-link header-landing-menu-item"><%= link_to "About", static_pages_about_path %></li>
       <li class="nav-link header-landing-menu-item"><%= link_to "Events", events_path %></li>
       <li class="nav-link header-landing-menu-item"><%= link_to "Media", media_photo_path %></li>
@@ -24,7 +25,9 @@
         <% else %>
           <li class="nav-link"><%= link_to current_user.email, edit_user_registration_path, class: "navlink userlink" %></li>
         <% end %>
-        <li class="nav-link"><%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %></li>
+        <li class="nav-link">
+          <%= link_to "Logout", destroy_user_session_path, class: "navlink userlink", method: :delete %>
+        </li>
       <% end %>
     </ul>
   </div>

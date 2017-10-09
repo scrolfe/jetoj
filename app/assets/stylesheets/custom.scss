@@ -21,6 +21,12 @@ $link-color: black;
  width: 100%;
 }
 
+.header-landing-menu-item {
+  .nav-link {
+    padding: 0;
+  }
+}
+
 @media (max-width: 767px) {
   .header {
     position: relative;
