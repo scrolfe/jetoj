@@ -12,5 +12,8 @@
       <a href="#" class="fa fa-snapchat-ghost fa-3x" aria-hidden="true"></a>
       <a href="#" class="fa fa-soundcloud fa-3x" aria-hidden="true"></a>
     </div>
+    <% if user_signed_in? %>
+      <%= link_to "Edit Performer", edit_performer_path(performer) %>
+    <% end %>
   </div>
 </div>
