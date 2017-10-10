@@ -31,7 +31,7 @@ class MediaController < ApplicationController
 
   def update
     if @medium.update(medium_params)
-      redirect_to @medium
+      redirect_to "/media/#{@medium.medium_type}"
     else
       render :edit
     end

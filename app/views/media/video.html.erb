@@ -9,8 +9,10 @@
     </div>
     <div class="col-sm-6">
       <%= medium.description %>
+      <% if user_signed_in? %>
+        <p><%= link_to "Edit Video", edit_medium_path(medium) %></p>
+      <% end %>
     </div>
   </div>
-  <br />
   <br />
 <% end %>
