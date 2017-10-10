@@ -1,6 +1,6 @@
-<span><%= link_to "Chicago", controller: "performers", action: "chicago" %> | </span>
-<span><%= link_to "Minneapolis", controller: "performers", action: "minneapolis" %></span>
-
+<%= render "filters" %>
+<br />
+<br />
 <% @performers.each do |performer| %>
   <div class="row">
     <div class="col-md-6">
