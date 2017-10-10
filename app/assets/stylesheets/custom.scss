@@ -233,11 +233,13 @@ $link-color: black;
 
 @import "bootstrap";
 
-// * {
-//   background: #000 !important;
-//   color: #0f0 !important;
-//   outline: solid #f00 1px !important;
-// }
+
+/* another frame util */
+* {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}
 
 @media (max-width: 767px){
   .container {
