@@ -1,10 +1,13 @@
 <%= render 'filters' %>
-<div class="row d-flex flex-column justify-content-center">
-  <div class="col-md-4">
+<div class="row text-center">
+  <div class="col-md-4 mr-auto ml-auto">
     <% @media.each do |medium| %>
       <h2><%= medium.audio_file_name %></h2>
       <%= audio_tag medium.audio.url, controls: true %>
       <p><%= medium.description %></p>
+      <% if user_signed_in? %>
+        <p><%= link_to "Edit Audio", edit_medium_path(medium) %></p>
+      <% end %>
     <% end %>
   </div>
 </div>

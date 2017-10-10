@@ -1,24 +1,61 @@
-<h1>Media#edit</h1>
+<div class="row border-util">
+  <div class="form-custom col-md-6 mr-auto ml-auto text-center">
+      <div class="row">
+        <% if !@medium.image.blank? %>
+          <%= image_tag @medium.image.url(:thumb), class: "img-fluid mr-auto ml-auto"%>
+        <% end %>
+      </div>
 
-<% if !@medium.image.blank? %>
-  <p><%= image_tag @medium.image.url %></p>
-<% end %>
+    <%= form_for @medium do |f| %>
 
-<%= form_for @medium do |f| %>
-  <% Medium.medium_types.each_key do |type| %>
-    <%= f.label type %>
-    <%= f.radio_button :medium_type, type %><br />
-  <% end %>
-  
-  <%= f.label :image %><br />
-  <%= f.file_field :image %><br />
-  <%= f.label :youtube_id %><br />
-  <%= f.text_field :youtube_id %><br />
-  <%= f.label :description %><br />
-  <%= f.text_area :description %><br />
-  <%= f.submit 'Update' %>
-<% end %>
+      <%= f.hidden_field :medium_type, value: "photo" %>
 
-<%= form_for @medium, method: :delete do |f| %>
-  <%= f.submit 'Delete' %>
-<% end %>
+      <ul class="nav nav-tabs" id="formTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="photo-tab" data-toggle="tab" href="#photo" role="tab" aria-controls="photo" aria-expanded="true">Photo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="audio-tab" data-toggle="tab" href="#audio" role="tab" aria-controls="audio">Audio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video">Video</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="formTabContent">
+        <div class="tab-pane fade show active" id="photo" role="tabpanel" aria-labelledby="photo-tab">
+          <div class="form-group">
+            <%= f.label :image %>
+            <%= f.file_field :image, class: "form-control-file mr-auto ml-auto" %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="audio-tab">
+          <div class="form-group">
+            <%= f.label :audio %>
+            <%= f.file_field :audio, class: "form-control-file mr-auto ml-auto" %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
+          <div class="form-group">
+            <%= f.label :youtube_id, "YouTube ID" %>
+            <%= f.text_field :youtube_id, class: "form-control" %>
+            <p class="help-block">(Copy and paste the ID following "?v=" in the full URL)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit 'Update', class: "btn btn-success" %>
+      </div>
+    <% end %>
+
+    <%= form_for @medium, method: :delete do |f| %>
+      <%= f.submit 'Delete', class: "btn btn-warning" %>
+    <% end %>
+
+  </div>
+</div>

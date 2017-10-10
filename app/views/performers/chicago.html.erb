@@ -1,22 +1,7 @@
-<span><%= link_to "Chicago", controller: "performers", action: "chicago" %> | </span>
-<span><%= link_to "Minneapolis", controller: "performers", action: "minneapolis" %></span>
-
+<%= render "filters" %>
+<br />
+<br />
 <% @performers.each do |performer| %>
-  <div class="row">
-    <div class="col-md-6">
-      <%= image_tag performer.headshot.url, class: "img-fluid" %>
-    </div>
-    <div class="col-md-6">
-      <h3><b><%= performer.name %></b></h3>
-      <h4><%= performer.bio %></h4>
-      <p>Follow <%= performer.name %></p>
-      <div class="social-buttons">
-        <a href="#" class="fa fa-facebook fa-3x" aria-hidden="true"></a>
-        <a href="#" class="fa fa-youtube-play fa-3x" aria-hidden="true"></a>
-        <a href="#" class="fa fa-snapchat-ghost fa-3x" aria-hidden="true"></a>
-        <a href="#" class="fa fa-soundcloud fa-3x" aria-hidden="true"></a>
-      </div>
-    </div>
-  </div>
+  <%= render "profile", performer: performer %>
   <hr />
 <% end %>

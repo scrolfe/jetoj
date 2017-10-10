@@ -1,22 +1,44 @@
-<h1>Performers#edit</h1>
+<div class="row border-util">
+  <div class="form-custom col-md-6 mr-auto ml-auto text-center">
+    <h2>Edit Performer</h2>
 
-<%= image_tag @performer.headshot.url(:thumb) %>
+    <%= image_tag @performer.headshot.url(:thumb) %>
 
-<%= form_for @performer do |f| %>
-  <% Performer.branches.each_key do |branch| %>
-    <%= f.label branch %>
-    <%= f.radio_button :branch, branch %><br />
-  <% end %>
+    <%= form_for @performer do |f| %>
+      <div class="form-group">
+        <% Performer.branches.each_key do |branch| %>
+          <div class="form-check">
+            <%= f.radio_button :branch, branch, class: "form-check-input" %>
+            <%= f.label branch, class: "form-check-label" %>
+          </div>
+        <% end %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :headshot %>
+        <%= f.file_field :headshot, class: "form-control-file" %>
+      </div>
 
-  <%= f.label :headshot %><br />
-  <%= f.file_field :headshot %><br />
-  <%= f.label :first_name %><br />
-  <%= f.text_field :first_name %><br />
-  <%= f.label :last_name %><br />
-  <%= f.text_field :last_name %><br />
-  <%= f.label :bio %><br />
-  <%= f.text_area :bio %><br />
-  <%= f.submit 'Update' %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
 
-<%= button_to 'Delete', performer_path(@performer), confirm: 'Are you sure?', method: :delete %>
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :bio %>
+        <%= f.text_area :bio, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit 'Update', class: "btn btn-success" %>
+      </div>
+    <% end %>
+
+    <%= button_to 'Delete', performer_path(@performer), confirm: 'Are you sure?', method: :delete, class: "btn btn-warning" %>
+  </div>
+</div>
