@@ -34,13 +34,13 @@ $link-color: black;
     flex-wrap: wrap; // allow us to do the line break for collapsing content
   }
 
-  .header-landing {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap; // allow us to do the line break for collapsing content
-    align-items: center;
-    justify-content: space-between; // space out brand from logo
-  }
+  // .header-landing {
+  //   position: relative;
+  //   display: flex;
+  //   flex-wrap: wrap; // allow us to do the line break for collapsing content
+  //   align-items: center;
+  //   justify-content: space-between; // space out brand from logo
+  // }
 
   .header-menu {
     padding: 1em 0 1em 0;
@@ -135,7 +135,8 @@ $link-color: black;
 #jetoj-logo {
   max-width:780px;
   max-height:520px;
-  width: inherit;
+  width: 100%;
+  height: auto;
 }
 
 #mission {

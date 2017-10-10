@@ -1,11 +1,10 @@
-<nav class="navbar header-landing">
-  <div class="row d-flex align-items-end">
-  <div class="col-xs-3 col-sm-12 col-md-12">
-    <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "img-fluid navbar-brand header-brand") %>
-  </div>
+  <div class="navbar d-flex flex-row justify-content-left">
 
+      <%= image_tag("jetoj-logo.jpg", :alt => "Jetoj logo", :id => "jetoj-logo", :class => "img-fluid") %>
+    </div>
   <div class="col-xs-12 col-sm-12 col-md-5">
     <ul class="nav header-landing-menu justify-content-around">
+    </div>
       <li class="nav-link header-landing-menu-item"><%= link_to "About", static_pages_about_path %></li>
       <li class="nav-link header-landing-menu-item"><%= link_to "Events", events_path %></li>
       <li class="nav-link header-landing-menu-item"><%= link_to "Media", media_photo_path %></li>
