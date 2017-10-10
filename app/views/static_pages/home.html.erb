@@ -9,7 +9,7 @@
 <div class="row d-flex flex-column featured-event">
   <div class="col-xs-12 col-md-12">
     <h1><%= @featured_event.name %></h1>
-    <%= image_tag @featured_event.image %>
+    <%= image_tag @featured_event.image, class: "img-fluid" %>
     <%= @featured_event.description %>
   </div>
 </div>
