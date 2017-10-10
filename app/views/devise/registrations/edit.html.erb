@@ -1,14 +1,13 @@
 <div class="row border-util">
   <div class="form-custom col-md-6 mr-auto ml-auto text-center">
+    <h2 class="text-center">Admin Panel</h2>
 
     <% if current_user.admin %>
-      <h2>Admin Panel</h2>
-      <%= link_to "Create a new user", admins_new_user_path %>
+      <h4><%= link_to "Add a Moderator", admins_new_user_path %></h4>
     <% end %>
 
     <br />
-    <br />
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <h2>Edit Your Profile</h2>
 
     <%= image_tag current_user.avatar.url(:thumb) %>
 
@@ -48,7 +47,7 @@
         <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
       </div>
 
-      <div class="actions">
+      <div class="form-group">
         <%= f.submit "Update", class: "btn btn-success" %>
       </div>
     <% end %>

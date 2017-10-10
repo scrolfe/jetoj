@@ -16,242 +16,242 @@ $event-picture: url('../images/seed_assets/events_images/event_image');
 $font-family-base:'Josefin Sans', sans-serif;
 $link-color: black;
 
-#map {
- height: 400px;
- width: 100%;
-}
-
-@media (max-width: 767px) {
-  .header {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap; // allow us to do the line break for collapsing content
-
-    > .container,
-    > .container-fluid {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-
-    .header-landing {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap; // allow us to do the line break for collapsing content
-      align-items: center;
-      justify-content: space-between; // space out brand from logo
-
-      > .container,
-      > .container-fluid {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-between;
-        }
-    }
-
-  .header-menu {
-    padding: 1em 0 1em 0;
-    display: flex;
-    flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    li {
-      width: 25%;
-      .nav-link {
-        font-size: 1em;
-      }
-    }
-  }
-
-  .header-row {}
-
-  .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .header {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap; // allow us to do the line break for collapsing content
-    align-items: center;
-    justify-content: space-between; // space out brand from logo
-
-    > .container,
-    > .container-fluid {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-
-    .header-brand {
-      display: inline-block;
-      line-height: inherit;
-      white-space: nowrap;
-
-    }
-
-    .header-landing {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap; // allow us to do the line break for collapsing content
-      align-items: center;
-      justify-content: space-between; // space out brand from logo
-
-      > .container,
-      > .container-fluid {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-between;
-        }
-    }
-
-  .header-menu {
-    padding: 10em 0 1em 0;
-    display: flex;
-    flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-
-    li {
-      width: 25%;
-    }
-  }
-  .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    height: 100%;
-  }
-
-}
-
-.featured-event {
-  margin-bottom: 2em;
-}
-
-.region-menu {
-
-}
-.region-menu-tabs {
-  margin: auto;
-}
-
-.home-carousel {
-  // width: 100%;
-}
-
-#jetoj-logo {
-  max-width:780px;
-  max-height:520px;
-  width: inherit;
-}
-
-#mission {
-  font-style: italic;
-  font-size: 1.75rem;
-  margin: 2em 0 2em 0;
-}
-
-#description {
-  font-size: 2.75em;
-}
-
-.header-landing-menu {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1.5em;
-  .header-landing-menu-item {
-    flex-direction: row;
-
-  }
-}
-
-
-
-.menu {
-  font-size: 1.5em;
-  padding: 0;
-}
-
-/* general */
-
-.post-thumbnail {
-  padding-top: 2em;
-}
-
-
-
-/* post */
-
-.post-head {
-  width: inherit;
-  display: flex;
-  .post-thumbnail {
-    width: 240px;
-    height: 160px;
-  }
-  .post-title {
-    text-transform: capitalize;
-    font-weight: 800;
-    font-size: 1.5em;
-    width: 25%;
-    float: left;
-    margin: 0 0 0 20px;
-    color: $pastel-orange;
-  }
-}
-.post-tail {
-  margin: 10px 0 25px 10px;
-  width: inherit;
-  display: flex;
-  flex-direction: column;
-  .post-credits {
-    font-size: .75em;
-  }
-  .post-summary {
-    font-size: 1em;
-    display: block;
-  }
-  .post-link {
-    font-size: 1em;
-    font-weight: 500;
-  }
-}
-
-
-
-/* These need to be better organized */
-
-.footer {
-  a.fa {
-    padding: 0 5px 0 5px;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-.performersCarousel {
-  display: none;
-}
+// #map {
+//  height: 400px;
+//  width: 100%;
+// }
+//
+// @media (max-width: 767px) {
+//   .header {
+//     position: relative;
+//     display: flex;
+//     flex-wrap: wrap; // allow us to do the line break for collapsing content
+//
+//     > .container,
+//     > .container-fluid {
+//         display: flex;
+//         flex-wrap: wrap;
+//         align-items: center;
+//         justify-content: space-between;
+//       }
+//     }
+//
+//     .header-landing {
+//       position: relative;
+//       display: flex;
+//       flex-wrap: wrap; // allow us to do the line break for collapsing content
+//       align-items: center;
+//       justify-content: space-between; // space out brand from logo
+//
+//       > .container,
+//       > .container-fluid {
+//           display: flex;
+//           flex-wrap: wrap;
+//           align-items: center;
+//           justify-content: space-between;
+//         }
+//     }
+//
+//   .header-menu {
+//     padding: 1em 0 1em 0;
+//     display: flex;
+//     flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
+//     padding-left: 0;
+//     margin-bottom: 0;
+//     list-style: none;
+//     li {
+//       width: 25%;
+//       .nav-link {
+//         font-size: 1em;
+//       }
+//     }
+//   }
+//
+//   .header-row {}
+//
+//   .menu {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     padding-left: 0;
+//     margin-bottom: 0;
+//     list-style: none;
+//   }
+// }
+//
+// @media (min-width: 768px) {
+//   .header {
+//     position: relative;
+//     display: flex;
+//     flex-wrap: wrap; // allow us to do the line break for collapsing content
+//     align-items: center;
+//     justify-content: space-between; // space out brand from logo
+//
+//     > .container,
+//     > .container-fluid {
+//         display: flex;
+//         flex-wrap: wrap;
+//         align-items: center;
+//         justify-content: space-between;
+//       }
+//     }
+//
+//     .header-brand {
+//       display: inline-block;
+//       line-height: inherit;
+//       white-space: nowrap;
+//
+//     }
+//
+//     .header-landing {
+//       position: relative;
+//       display: flex;
+//       flex-wrap: wrap; // allow us to do the line break for collapsing content
+//       align-items: center;
+//       justify-content: space-between; // space out brand from logo
+//
+//       > .container,
+//       > .container-fluid {
+//           display: flex;
+//           flex-wrap: wrap;
+//           align-items: center;
+//           justify-content: space-between;
+//         }
+//     }
+//
+//   .header-menu {
+//     padding: 10em 0 1em 0;
+//     display: flex;
+//     flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
+//     padding-left: 0;
+//     margin-bottom: 0;
+//     list-style: none;
+//
+//     li {
+//       width: 25%;
+//     }
+//   }
+//   .menu {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     padding-left: 0;
+//     margin-bottom: 0;
+//     list-style: none;
+//     height: 100%;
+//   }
+//
+// }
+//
+// .featured-event {
+//   margin-bottom: 2em;
+// }
+//
+// .region-menu {
+//
+// }
+// .region-menu-tabs {
+//   margin: auto;
+// }
+//
+// .home-carousel {
+//   // width: 100%;
+// }
+//
+// #jetoj-logo {
+//   max-width:780px;
+//   max-height:520px;
+//   width: inherit;
+// }
+//
+// #mission {
+//   font-style: italic;
+//   font-size: 1.75rem;
+//   margin: 2em 0 2em 0;
+// }
+//
+// #description {
+//   font-size: 2.75em;
+// }
+//
+// .header-landing-menu {
+//   display: flex;
+//   flex-wrap: wrap;
+//   font-size: 1.5em;
+//   .header-landing-menu-item {
+//     flex-direction: row;
+//
+//   }
+// }
+//
+//
+//
+// .menu {
+//   font-size: 1.5em;
+//   padding: 0;
+// }
+//
+// /* general */
+//
+// .post-thumbnail {
+//   padding-top: 2em;
+// }
+//
+//
+//
+// /* post */
+//
+// .post-head {
+//   width: inherit;
+//   display: flex;
+//   .post-thumbnail {
+//     width: 240px;
+//     height: 160px;
+//   }
+//   .post-title {
+//     text-transform: capitalize;
+//     font-weight: 800;
+//     font-size: 1.5em;
+//     width: 25%;
+//     float: left;
+//     margin: 0 0 0 20px;
+//     color: $pastel-orange;
+//   }
+// }
+// .post-tail {
+//   margin: 10px 0 25px 10px;
+//   width: inherit;
+//   display: flex;
+//   flex-direction: column;
+//   .post-credits {
+//     font-size: .75em;
+//   }
+//   .post-summary {
+//     font-size: 1em;
+//     display: block;
+//   }
+//   .post-link {
+//     font-size: 1em;
+//     font-weight: 500;
+//   }
+// }
+//
+//
+//
+// /* These need to be better organized */
+//
+// .footer {
+//   a.fa {
+//     padding: 0 5px 0 5px;
+//     &:hover {
+//       text-decoration: none;
+//     }
+//   }
+// }
+//
+// .performersCarousel {
+//   display: none;
+// }
 
 
 @import "bootstrap";
