@@ -3,7 +3,10 @@
 <div class="row">
   <% @media.each do |medium| %>
     <div class="col-sm-4">
-      <%= image_tag medium.image.url, class: "img-fluid border-util" %>
+      <%= image_tag medium.image.url, class: "gallery-photo img-fluid border-util" %>
+      <% if user_signed_in? %>
+        <%= link_to "Edit Photo", edit_medium_path(medium) %>
+      <% end %>
     </div>
   <% end %>
 </div>
