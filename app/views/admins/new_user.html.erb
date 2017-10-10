@@ -1,6 +1,7 @@
 <div class="row border-util">
-  <div class="col-md-4 mr-auto ml-auto text-center">
-    <p>Create a username and password for moderators. Moderators have access to create, edit, and delete all posts, performers, media, and events. But, they will not be allowed to create additional moderator accounts</p>  
+  <div class="form-custom col-md-4 mr-auto ml-auto text-center border-util">
+    <h3>Add Moderator</h3>
+    <p>Create a username and password for moderators. Moderators have access to create, edit, and delete all posts, performers, media, and events. But they will not be allowed to create additional moderator accounts.</p>
 
     <%= form_for @user, url: 'create_user' do |f| %>
       <div class="form-group">
