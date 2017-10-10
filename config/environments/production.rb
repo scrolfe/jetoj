@@ -1,3 +1,5 @@
+require 'google_maps_service'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -95,5 +97,8 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     }
   }
+
+  GoogleMapsService.configure do |config|
+    config.key = ''
 
 end

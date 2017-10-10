@@ -11,6 +11,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @coords = Event.set_coords(@event)
   end
 
   def new

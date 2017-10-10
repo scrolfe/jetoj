@@ -21,36 +21,26 @@ $link-color: black;
  width: 100%;
 }
 
+.header-landing-menu-item {
+  .nav-link {
+    padding: 0;
+  }
+}
+
 @media (max-width: 767px) {
   .header {
     position: relative;
     display: flex;
     flex-wrap: wrap; // allow us to do the line break for collapsing content
+  }
 
-    > .container,
-    > .container-fluid {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-
-    .header-landing {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap; // allow us to do the line break for collapsing content
-      align-items: center;
-      justify-content: space-between; // space out brand from logo
-
-      > .container,
-      > .container-fluid {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-between;
-        }
-    }
+  // .header-landing {
+  //   position: relative;
+  //   display: flex;
+  //   flex-wrap: wrap; // allow us to do the line break for collapsing content
+  //   align-items: center;
+  //   justify-content: space-between; // space out brand from logo
+  // }
 
   .header-menu {
     padding: 1em 0 1em 0;
@@ -86,15 +76,7 @@ $link-color: black;
     flex-wrap: wrap; // allow us to do the line break for collapsing content
     align-items: center;
     justify-content: space-between; // space out brand from logo
-
-    > .container,
-    > .container-fluid {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
+  }
 
     .header-brand {
       display: inline-block;
@@ -109,14 +91,6 @@ $link-color: black;
       flex-wrap: wrap; // allow us to do the line break for collapsing content
       align-items: center;
       justify-content: space-between; // space out brand from logo
-
-      > .container,
-      > .container-fluid {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-between;
-        }
     }
 
   .header-menu {
@@ -161,13 +135,16 @@ $link-color: black;
 #jetoj-logo {
   max-width:780px;
   max-height:520px;
-  width: inherit;
+  width: 100%;
+  height: auto;
 }
 
 #mission {
   font-style: italic;
   font-size: 1.75rem;
-  margin: 2em 0 2em 0;
+  @media (max-width: 767px) {
+    padding: 0 1em;
+  }
 }
 
 #description {
@@ -175,12 +152,8 @@ $link-color: black;
 }
 
 .header-landing-menu {
-  display: flex;
-  flex-wrap: wrap;
   font-size: 1.5em;
   .header-landing-menu-item {
-    flex-direction: row;
-
   }
 }
 
@@ -238,9 +211,9 @@ $link-color: black;
 
 /* utilities */
 
-.border-util {
-  border: 1px solid $pastel-orange;
-}
+// .border-util {
+//   border: 1px solid $pastel-orange;
+// }
 
 /* These need to be better organized */
 
@@ -259,3 +232,18 @@ $link-color: black;
 
 
 @import "bootstrap";
+
+
+/* another frame util */
+// * {
+//   background: #000 !important;
+//   color: #0f0 !important;
+//   outline: solid #f00 1px !important;
+// }
+
+@media (max-width: 767px){
+  .container {
+    padding: 0;
+    overflow-x: 0;
+  }
+}
