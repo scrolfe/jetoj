@@ -1,5 +1,6 @@
 class PerformersController < ApplicationController
   before_action :set_performer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:chicago, :minneapolis, :show]
 
   def chicago
     @performers = Performer.chicago
