@@ -1,3 +1,5 @@
+require 'Google_Maps_Service'
+
 class EventsController < ApplicationController
   before_action :set_event, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
@@ -54,4 +56,5 @@ class EventsController < ApplicationController
   def set_event
     @event = Event.find(params[:id])
   end
+
 end
