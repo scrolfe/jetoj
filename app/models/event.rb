@@ -12,7 +12,7 @@ class Event < ApplicationRecord
   scope :branch, -> (branch) { where branch: branch }
 
   def self.set_coords(event)
-    gmaps = GoogleMapsService::Client.new(key: 'AIzaSyD5oCFsiuCkN1xIVZvzKKw4F10cBMTpfwU')
+    gmaps = GoogleMapsService::Client.new(key: 'YOUR_API_KEY')
     results = gmaps.geocode("#{event.address['street']}, #{event.address['city']}, #{event.address['state']}")
     {lat: results[0][:geometry][:location][:lat], lng: results[0][:geometry][:location][:lng]}.to_json
 
