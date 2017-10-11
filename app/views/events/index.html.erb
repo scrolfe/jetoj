@@ -1,6 +1,6 @@
 <div class="row">
   <div class="ml-auto mr-auto">
-    <%= image_tag "https://s3.us-east-2.amazonaws.com/jetoj/jetoj-events.png", alt: "jetoj events section", id: "jetoj-events", class: "img-fluid" %>
+    <%= image_tag "https://s3.us-east-2.amazonaws.com/jetoj/events.png", alt: "jetoj events section", id: "jetoj-events", class: "img-fluid" %>
   </div>
 </div>
 
@@ -21,7 +21,7 @@
         <a href="#">March</a>
       </div>
     </div>
-    
+
     <% @events.each do |event| %>
       <%= link_to(event_path(event)) do %>
         <h2><%= event.name %></h2>
