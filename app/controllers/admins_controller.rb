@@ -1,7 +1,14 @@
 class AdminsController < ApplicationController
+  before_action :authenticate_user!
+
   def new_user
-    authorize! :manage, User
-    @user = User.new
+    if current_user.admin?
+      authorize! :manage, User
+      @user = User.new
+    else
+      flash[:alert] = "You are not allowed to access this page."
+      redirect_to "/"
+    end
   end
 
   def create_user

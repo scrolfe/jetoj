@@ -45,31 +45,6 @@
       </div>
     </div>
   </div>
-</div>
-
-
-  <% gmaps = GoogleMapsService::Client.new(key: 'YOUR_KEY_HERE') %>
-  <% results = gmaps.geocode([@event.address['street_address'], @event.address['city']].join(", ")) #{@event.address['city']}, #{@event.address['state']}, #{@event.address['zip']}") %>
-
-  <div class="row">
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var eventLocation = {lat: '<%= results.geometry.location.lat %>', lng: '<%= results.geometry.location.lng %>' };
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: eventLocation
-        });
-        var marker = new google.maps.Marker({
-          position: eventLocation,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&callback=initMap">
-    </script>
-  </div>
 
   <div class="col-md-4 border-util">
     <div class="events-sidebar text-center border-util">
@@ -84,61 +59,26 @@
       <p><%= Event.find_by_id(3).description %></p>
     </div>
 
-<h1><%= @coords %></h1>
+    <hr />
 
-<div class="row">
-  <div id="map"></div>
-  <script>
-    function initMap() {
-      var eventLocation = {lat: <%= @coords[:lat] %>, lng: <%= @coords[:lng] %>};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center: eventLocation
-      });
-      var marker = new google.maps.Marker({
-        position: eventLocation,
-        map: map
-      });
-    }
-  </script>
+    <div class="events-sidebar text-center border-util">
+      <h2>Other important info</h2>
+      <p>
+        Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
+      </p>
+      <p>Lorem ipsum abcdefg</p>
+      <p>Lorem ipsum abcdefg</p>
+    </div>
 
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&callback=initMap">
-  </script>
-</div>
+    <hr />
 
-<div class="col-md-4 border-util">
-  <div class="events-sidebar text-center border-util">
-    <h3>Featured Event</h3>
-  </div>
-  <div class="featured-event border-util">
-    <%= link_to(event_path(Event.find_by_id(3))) do %>
-      <h2><%= Event.find_by_id(3).name %></h2>
-      <%= image_tag Event.find_by_id(3).image.url, class: "img-fluid" %>
-    <% end %>
-    <p><%= Event.find_by_id(3).date_time.strftime("%B %d, %Y") %></p>
-    <p><%= Event.find_by_id(3).description %></p>
-  </div>
-
-  <hr />
-
-  <div class="events-sidebar text-center border-util">
-    <h2>Other important info</h2>
-    <p>
-      Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
-    </p>
-    <p>Lorem ipsum abcdefg</p>
-    <p>Lorem ipsum abcdefg</p>
-  </div>
-
-  <hr />
-
-  <div class="events-sidebar text-center border-util">
-    <h2>Other important info</h2>
-    <p>
-      Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
-    </p>
-    <p>Lorem ipsum abcdefg</p>
-    <p>Lorem ipsum abcdefg</p>
+    <div class="events-sidebar text-center border-util">
+      <h2>Other important info</h2>
+      <p>
+        Lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg lorem ipsum abcdefg
+      </p>
+      <p>Lorem ipsum abcdefg</p>
+      <p>Lorem ipsum abcdefg</p>
+    </div>
   </div>
 </div>

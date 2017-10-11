@@ -1,5 +1,6 @@
 class MediaController < ApplicationController
   before_action :set_medium, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:photo, :video, :audio]
 
   def photo
     @media = Medium.photo
