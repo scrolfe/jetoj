@@ -1,45 +1,48 @@
-<div class="row d-flex justify-content-center">
-  <div class="col-xs-12 col-sm-12 col-md-12 my-5">
-    <h2 id="mission">
-      Jetoj is a music series that makes classical music accessible to all audiences, regardless of opportunity or privilege.
-    </h2>
-  </div>
-</div>
-
-<div class="row d-flex flex-column featured-event">
-  <div class="col-xs-12 col-md-12">
-    <h1><%= @featured_event.name %></h1>
-    <%= image_tag @featured_event.image, class: "img-fluid" %>
-    <%= @featured_event.description %>
-  </div>
-</div>
-
-<ul class="nav nav-tabs" id="performerTabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="chicago-tab" data-toggle="tab" href="#chicago" role="tab" aria-controls="chicago" aria-expanded="true">Chicago</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="minneapolis-tab" data-toggle="tab" href="#minneapolis" role="tab" aria-controls="minneapolis">Minneapolis</a>
-  </li>
-</ul>
-<div class="tab-content mb-1" id="performerTabContent">
-  <div class="tab-pane show active" id="chicago" role="tabpanel" aria-labelledby="chicago-tab">
-    <div class="carouselContainer">
-      <% @chicago_performers.each do |performer| %>
-        <div class="performersCarousel chicagoPerformers">
-          <%= render 'performer_profile', performer: performer %>
-        </div>
-      <% end %>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xs-12 col-sm-12 col-md-12 my-5">
+      <h2 id="mission">
+        Jetoj is a music series that makes classical music accessible to all audiences, regardless of opportunity or privilege.
+      </h2>
     </div>
   </div>
-  <div class="tab-pane" id="minneapolis" role="tabpanel" aria-labelledby="minneapolis-tab">
-    <div class="carouselContainer">
-      <% @minneapolis_performers.each do |performer| %>
-        <div class="performersCarousel minneapolisPerformers">
-          <%= render 'performer_profile', performer: performer %>
-        </div>
-      <% end %>
+
+  <div class="row d-flex flex-column featured-event text-center">
+    <div class="col-xs-12 col-md-12">
+      <h1><%= @featured_event.name %></h1>
+      <%= image_tag @featured_event.image, class: "img-fluid" %>
+    </div>
+    <div class="col-xs-12 col-md-12">
+      <%= @featured_event.description %>
     </div>
   </div>
-</div>
+
+  <ul class="nav nav-tabs" id="performerTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="chicago-tab" data-toggle="tab" href="#chicago" role="tab" aria-controls="chicago" aria-expanded="true">Chicago</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="minneapolis-tab" data-toggle="tab" href="#minneapolis" role="tab" aria-controls="minneapolis">Minneapolis</a>
+    </li>
+  </ul>
+  <div class="tab-content mb-1" id="performerTabContent">
+    <div class="tab-pane show active" id="chicago" role="tabpanel" aria-labelledby="chicago-tab">
+      <div class="carouselContainer">
+        <% @chicago_performers.each do |performer| %>
+          <div class="performersCarousel chicagoPerformers">
+            <%= render 'performer_profile', performer: performer %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane" id="minneapolis" role="tabpanel" aria-labelledby="minneapolis-tab">
+      <div class="carouselContainer">
+        <% @minneapolis_performers.each do |performer| %>
+          <div class="performersCarousel minneapolisPerformers">
+            <%= render 'performer_profile', performer: performer %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
