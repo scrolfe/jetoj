@@ -13,7 +13,7 @@ class Event < ApplicationRecord
 
   def self.set_coords(event)
     gmaps = GoogleMapsService::Client.new(key: ENV['GOOGLE_API_KEY'])
-    results = gmaps.geocode("#{event.address['street']}, #{event.address['city']}, #{event.address['state']}")
+    results = gmaps.geocode("#{event.address['street_address']}, #{event.address['city']}, #{event.address['state']}")
     {lat: results[0][:geometry][:location][:lat], lng: results[0][:geometry][:location][:lng]}
   end
 end
