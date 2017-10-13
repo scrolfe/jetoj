@@ -1,4 +1,4 @@
-require 'Google_Maps_Service'
+# require 'Google_Maps_Service'
 
 class EventsController < ApplicationController
   before_action :set_event, only: [:edit, :update, :destroy]
