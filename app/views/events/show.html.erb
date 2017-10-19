@@ -50,8 +50,8 @@
     <div class="d-flex flex-row event-map">
       <%= javascript_tag do %>
         function initMap() {
-          var lat = <%= @coords[:lat] %>
-          var lng = <%= @coords[:lng] %>
+          var lat = <%= @event.lat %>
+          var lng = <%= @event.lng %>
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
             center: {lat: lat, lng: lng}

@@ -14,7 +14,6 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @coords = Event.set_coords(@event)
   end
 
   def new
@@ -24,7 +23,15 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.new(event_params)
     if @event.save
+      @coords = Event.set_coords(@event)
+      @event.update_attributes(lat: @coords[:lat], lng: @coords[:lng])
+
+      p "!!!!!!!!!!!!!!!!!!!!!!!!"
+      p @event.lat
+
       redirect_to @event
+
+
     else
       render :new
     end
@@ -50,7 +57,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:branch, :name, :description, :date_time, :image, address: [:street_address, :city, :state, :zip, :branch])
+    params.require(:event).permit(:branch, :name, :description, :date_time, :image, :lat, :lng, address: [:street_address, :city, :state, :zip, :branch])
   end
 
   def set_event
