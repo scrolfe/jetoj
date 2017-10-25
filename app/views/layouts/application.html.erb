@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Jetoj</title>
+    <%= Gon::Base.render_data %>
+    <%= javascript_include_tag 'maps' %>
     <%= csrf_meta_tags %>
     <meta name="google-site-verification" content="0xnUfYwbx8bvw1LLfvkgFBNRU_2aexQDtOVz7rqwPxw" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +11,11 @@
     <script src="https://use.fontawesome.com/4653dc14c3.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<<<<<<< Updated upstream
     <%= javascript_include_tag 'maps' %>
+=======
+
+>>>>>>> Stashed changes
   </head>
 
   <body>
