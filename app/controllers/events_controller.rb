@@ -25,13 +25,7 @@ class EventsController < ApplicationController
     if @event.save
       @coords = Event.set_coords(@event)
       @event.update_attributes(lat: @coords[:lat], lng: @coords[:lng])
-
-      p "!!!!!!!!!!!!!!!!!!!!!!!!"
-      p @event.lat
-
       redirect_to @event
-
-
     else
       render :new
     end

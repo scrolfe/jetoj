@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  layout "home", only: :home
+  # layout "home", only: :home
 
   def login
   end
