@@ -29,9 +29,11 @@ class EventsController < ApplicationController
     @event = current_user.events.new(event_params)
     if @event.save
       @coords = Event.set_coords(@event)
+      p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      p "Geocode method successfully called. Updating now..."
       @event.update_attributes(lat: @coords[:lat], lng: @coords[:lng])
-
-      p "!!!!!!!!!!!!!!!!!!!!!!!!"
+      p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      p "Successfully updated."
       p @event.lat
 
       redirect_to @event
