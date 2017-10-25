@@ -14,6 +14,11 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @lat = @event.lat
+    @lng = @event.lng
+    gon.events = @event
+    gon.lat = @event.lat
+    gon.lng = @event.lng
   end
 
   def new
@@ -53,6 +58,8 @@ class EventsController < ApplicationController
       redirect_to events_path
     end
   end
+
+
 
   private
 
