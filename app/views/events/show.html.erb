@@ -47,8 +47,8 @@
     </div>
 
     <div id="map"></div>
-    <div class="d-flex flex-row event-map">
-          </div>
+    <%= javascript_include_tag 'maps' %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap" async defer></script>
   </div>
 
   <div class="col-md-4 border-util">
