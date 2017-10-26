@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <%= image_tag "jetoj-blog.jpg", alt: "jetoj blog section", id: "jetoj-blog", class: "img-fluid" %>
+      <%= image_tag "https://s3.us-east-2.amazonaws.com/jetoj/blog.png", alt: "jetoj blog section", id: "jetoj-blog", class: "img-fluid" %>
     </div>
   </div>
 </div>
@@ -15,6 +15,14 @@
     <div class="col-xs-12">
       <%= image_tag @post.image.url(:medium), class: "img-fluid" %>
     </div>
+
+    <% if @post.youtube_id %>
+      <div class="col-xs-12">
+        <div class="embed-responsive embed-responsive-16by9 border-util">
+          <%= youtube_frame("http://www.youtube.com/embed/#{@post.youtube_id}") %>
+        </div>
+      </div>
+    <% end %>
 
     <div class="col-xs-12 text-center">
       <hr />
