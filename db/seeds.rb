@@ -14,21 +14,28 @@ User.create(  email: 'test@user.com',
             )
 
 # Events
-7.times do
-  city = Faker::Address.city
-  state = Faker::Address.state_abbr
-  zip = Faker::Address.zip
-  date_time = DateTime.new(2018, (rand(12) + 1), (rand(28) + 1), (rand(12) + 1), 30)
+gmaps = GoogleMapsService::Client.new(key: ENV['GOOGLE_API_KEY'])
 
-  Event.create(
-    name: "#{Faker::BossaNova.artist} in #{city}",
+7.times do
+  date_time = Time.zone.parse("2017-11-12 07:00pm")
+  end_time = Time.zone.parse(date_time.to_s) + 3600
+
+  event = Event.new(
+    name: "#{Faker::BossaNova.artist} in Chicago",
     description: "#{Faker::Lorem.paragraph}",
-    address: {street_address: Faker::Address.street_address, city: city, state: state, zip: zip},
-    date_time: "#{date_time}",
+    address: {street_address: "5600 N Fairfield Ave", city: "Chicago", state: "IL", zip: "60659"},
+    date_time: date_time,
+    end_time: end_time,
     image: File.new("#{Rails.root}/app/assets/images/seed_assets/events_images/event_image.jpg"),
     user: User.first,
     branch: rand(2) + 1
     )
+
+  results = gmaps.geocode("#{event.address['street_address']}, #{event.address['city']}, #{event.address['state']}")
+  event.lat = results[0][:geometry][:location][:lat]
+  event.lng = results[0][:geometry][:location][:lng]
+
+  event.save!
 end
 
 # Posts

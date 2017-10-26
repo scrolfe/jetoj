@@ -29,7 +29,6 @@ module Jetoj
         request_specs: false
     end
 
-    # Handle Time class deprecation warning
     config.active_record.time_zone_aware_types = [:datetime, :time]
   end
 end
